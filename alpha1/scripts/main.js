@@ -1052,8 +1052,6 @@ function onOrchThumbClick(event)
 	$("#depthrange").val((selectedorchslide.attr("data-z"))*-1);
 	$("#scalerange").val(selectedorchslide.attr("data-scale"));
 	$("#slideknob").val(selectedorchslide.attr("data-rotation"));
-
-
 }
 function onOrchThumbMouseDown(event)
 {
@@ -1068,7 +1066,6 @@ function onOrchThumbMouseDown(event)
 	}
 
 	$("#"+event.currentTarget.id).css("z-index", z);
-
 	var spanid = (event.currentTarget.id).split("orch_slide")[1];
 	$("#data_x_p_"+spanid).css("opacity", 1)
 	$("#data_y_p_"+spanid).css("opacity", 1)
@@ -1084,10 +1081,7 @@ function onOrchThumbMouseUp(event)
 	{
 		z = 5000;
 	}
-
 	$("#"+event.currentTarget.id).css("z-index", z);
-
-
 	var spanid = (event.currentTarget.id).split("orch_slide")[1];
 	$("#data_x_p_"+spanid).css("opacity", 0)
 	$("#data_y_p_"+spanid).css("opacity", 0)
