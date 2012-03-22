@@ -373,7 +373,7 @@ h3, h4
 	text-decoration:none;
 	font-family:verdana;
 	font-size:10px;
-	z-index:800;
+	/*z-index:0;*/
 }
 #thumbdelete
 {

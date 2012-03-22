@@ -224,7 +224,7 @@ function getOrchestrationData()
 }
 function createNewPresentation()
 {
-	$("#drawingboard").html('<a href="#" id="deleteBtn" class="deleteicon" style="z-index:4000; left:-20000px" onclick="deleteObject()">x</a>');
+	$("#drawingboard").html('<a href="#" id="deleteBtn" class="deleteicon" style="z-index:0; left:-20000px" onclick="deleteObject()">x</a>');
 	$("#slidethumbnailholder").html("");
 	slidecounter =1;
 	objectcounter= 0;
