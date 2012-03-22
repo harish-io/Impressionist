@@ -769,7 +769,7 @@ function onKeyUp(event)
 {
 		if(event.keyCode == 13)
 		{
-			
+			console.log("Enter key");
 			$(editedobject).text($("#editorBox").val());
 			
 			$("#editorBox").val("");

@@ -1,3 +1,13 @@
+/**
+ * Impressionist
+ *
+ * Impressionist is a visual ide for impress.js. impress.js is a presentation tool based on the power of CSS3 transforms and transitions
+ * in modern browsers and inspired by the idea behind prezi.com.
+ *
+ * MIT Licensed.
+ *
+ * Impressionist Copyright 2012 Harish Sivaramakrishnan (@hsivaram) 
+ */
 function createArchiveAndDownload()
 {
 	var filename = currentSaveName+"_"+new Date().getTime();

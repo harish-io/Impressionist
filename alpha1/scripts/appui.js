@@ -1,7 +1,7 @@
 /**
- * Codename Vodka
+ * Impressionist
  *
- * Codename Vodka is a visual ide for impress.js. impress.js is a presentation tool based on the power of CSS3 transforms and transitions
+ * Impressionist is a visual ide for impress.js. impress.js is a presentation tool based on the power of CSS3 transforms and transitions
  * in modern browsers and inspired by the idea behind prezi.com.
  *
  * MIT Licensed.
@@ -12,20 +12,23 @@ var isdisabled = false;
 //Set up UI
 function setupUI()
 {
+	console.log("Setup UI");
 	$("#subnav2").css("z-index", -10000);
 	$("#subnav").css("z-index", 10000);
 	$("#subnav").css("visibility", "visible");
 	$("#subnav2").css("visibility", "hidden");
+	$("#editorBox").bind("keyup", onKeyUp);
+	$("#urlinput").bind("blur", onURLEntered);
+	$("#urlinput").bind("keyup", onURLEntered);
+	$("#editorBox").bind("focusout", onFocusOut);
+	bindTextInputEvents();
 	
 }
 //Bind events on text inputs. At the moment, the text editor and the
 //picture wizard.
 function bindTextInputEvents()
 {
-	$("#editorBox").bind("keyup", onKeyUp);
-	$("#urlinput").bind("blur", onURLEntered);
-	$("#urlinput").bind("keyup", onURLEntered);
-	$("#editorBox").bind("focusout", onFocusOut);
+	
 }
 //Hide the toasted editor
 function onFocusOut(event)
