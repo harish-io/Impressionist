@@ -255,6 +255,7 @@ function removeChildObjects(parent)
 }
 function doReparenting(index)
 {
+	var len 
 	for(var i =0; i<slidemap.length; i++)
 	{
 		if(slidemap[i].index == index)
@@ -262,12 +263,13 @@ function doReparenting(index)
 			slidemap.splice(i,1);
 		}
 	}
+	console.log(slidemap)
 	slidecounter--;
+	var len = $("#slidethumbnailholder")[0].childNodes.length;
 	for(var j=0; j<slidemap.length; j++)
 	{
 		var item = $("#slide_number_sliderthumb"+slidemap[j].index);
-		$("slide_number_sliderthumb"+slidemap[j].index).text(j);
-		//recount++;
+		item.text(j+1);
 	}
 }
 function hideEditedObject()
@@ -482,6 +484,7 @@ function addSlide()
 
 	var str = slidethumbtemplate.split("!SLIDE_ID!").join("slidethumb"+slidecounter);
 	str = str.split("!SLIDENUMBER!").join("slide_number_sliderthumb"+slidecounter);
+	str = str.split("!THUMBDISPLAYNUMBER!").join("slide_number_sliderthumb"+slidecounter);
 	str = str.split("!COUNT!").join(slidecounter);
 	str = str.split("!THUMBDELETE!").join("delete_btn_slidethumb"+slidecounter);
 	$("#slidethumbnailholder").append(str);
