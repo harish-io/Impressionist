@@ -706,6 +706,7 @@ function onThumbnailClick(event)
 		$("#"+event.currentTarget.id).removeClass("thumbnailselected")
 		slideselected = false;
 	}
+	editedobject = "";
 }
 function getCurrentSelectedSlide(item)
 {

@@ -501,6 +501,7 @@ function addSlide()
 	$("#____slide"+slidecounter).bind("dblclick", toastEditor)
 	$("#____slide"+slidecounter).bind("mouseup", onSlideMouseUp)
 	slidemap.push({index:slidecounter});
+	editedobject = "";
 	slidecounter++;
 }
 function cloneElement()
