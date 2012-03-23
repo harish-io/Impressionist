@@ -138,6 +138,7 @@ function init()
 	//localStorage.clear();	
 
 	$(document).bind("mouseup", onDocMouseUp);
+	$("#mask").css("visibility", "visible")
 	setupUI();
 	setupKnobs();
 	setupColorPicker();
