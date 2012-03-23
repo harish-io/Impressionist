@@ -1059,6 +1059,10 @@ function onOrchThumbClick(event)
 	$("#depthrange").val((selectedorchslide.attr("data-z"))*-1);
 	$("#scalerange").val(selectedorchslide.attr("data-scale"));
 	$("#slideknob").val(selectedorchslide.attr("data-rotate"));
+	$("#rotationxknob").val(selectedorchslide.attr("data-rotate-x"));
+	$("#rotationyknob").val(selectedorchslide.attr("data-rotate-y"));
+
+
 }
 function onOrchThumbMouseDown(event)
 {

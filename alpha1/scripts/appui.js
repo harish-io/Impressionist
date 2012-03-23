@@ -60,7 +60,7 @@ function setupKnobs()
              }
          }
 	);
-	$("#rotationyknob").knob
+	$("#rotationxknob").knob
 	(
 		{
             "change":function(e)
@@ -73,7 +73,7 @@ function setupKnobs()
             }
          }
 	);
-	$("#rotationzknob").knob
+	$("#rotationyknob").knob
 	(
 		{
             "change":function(e)
