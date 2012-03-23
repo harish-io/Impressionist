@@ -9,9 +9,10 @@
  * Impressionist Copyright 2012 Harish Sivaramakrishnan (@hsivaram) 
  */
 var isdisabled = false;
-var rotateX;
-var rotateY;
-var rotateZ;
+var rotateX = 0;
+var rotateY = 0;
+var rotateZ = 0;
+var currentsliderotation = 0;
 //Set up UI
 function setupUI()
 {
@@ -104,7 +105,7 @@ function setupKnobs()
                     currentsliderotation = e;
                     selectedorchslide.attr("data-rotate", e);
                     doExport();
-                    selectedorchslide.css("-webkit-transform", "rotate("+e+"deg)");
+                    selectedorchslide.css("-webkit-transform", "rotate("+e+"deg) rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
 
             }
          }
