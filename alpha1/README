@@ -1,0 +1,21 @@
+Impressionist is a visual tool that enables to create impress.js presentations in a visual, easy to use way. The drag and drop orchestrator will help define slide transitions visually.
+
+Impressionist is conceptualized and developed by Harish Sivaramakrishnan (@hsivaram) and is under open development on github. Please feel free to watch / fork / log issues.
+
+DEVELOPMENT NOTES 
+
+The current version is alpha1
+
+The MASTER branch of contains an early preview build of impressionist. The branch which is under active development is alpha2 and will be merged to MASTER
+
+The alpha preview is hosted at http://www.hsivaram.com/impressionist/alpha1 This is currently webkit only. Please use google chrome or safari to run the app. This has not been tested to a great deal on windows (blame it on me having only a mac) and I expect to find more issues on win than on mac. Please do log issues / feature requests in the issues section
+
+CREDITS
+Impressionist uses the following libraries:
+
+* Impress.js by Bartek Szopka (https://github.com/bartaz/impress.js/)
+* Twitter bootstrap (http://twitter.github.com/bootstrap/)
+* jQuery & jQuery UI (http://jquery.com)
+* Anthony Terriens jQuery Knob (https://github.com/aterrien/jQuery-Knob)
+* eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
+
