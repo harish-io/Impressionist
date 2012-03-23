@@ -202,9 +202,12 @@ function getOrchestrationData()
 			var l = $("#"+child).css("left");
 			var t = $("#"+child).css("top");
 			var id = $("#"+child).attr("id").split("orch_slide____slide")[1];
-			var rotation = $("#"+child).attr("data-rotation");
+			var rotation = $("#"+child).attr("data-rotate");
 			var z = $("#"+child).attr("data-z");
 			var scale = $("#"+child).attr("data-scale");
+			var datarotatex = $("#"+child).attr("data-rotate-x");
+			var datarotatey = $("#"+child).attr("data-rotate-y");
+
 			if(rotation == undefined)
 			{
 				rotation = 0;
@@ -217,7 +220,7 @@ function getOrchestrationData()
 			{
 				z = 0;
 			}
-			orchestrationdataarray.push("id:"+id+"__left:"+l+"__top:"+t+"__rot:"+rotation+"__z:"+z+"__scale:"+scale);
+			orchestrationdataarray.push("id:"+id+"__left:"+l+"__top:"+t+"__rot:"+rotation+"__z:"+z+"__scale:"+scale+"__datarotatex:"+datarotatex+"__datarotatey:"+datarotatey);
 		}
 	}
 	return orchestrationdataarray.join("$*$");
@@ -1026,10 +1029,13 @@ function layoutOrchestrationThumbs(input)
 				var t = (orchestrationdataarray[i].top).split("px")[0];
 				child.css("left", l)
 				child.css("top", t);
-				child.css("-webkit-transform", "rotate("+orchestrationdataarray[i].rot+"deg)");
+				child.css("-webkit-transform", "rotate("+orchestrationdataarray[i].rot+"deg) rotateX("+orchestrationdataarray[i].rotatex+"deg) rotateY("+orchestrationdataarray[i].rotatey+"deg)");
 				child.attr("data-z",orchestrationdataarray[i].z );
 				child.attr("data-scale",orchestrationdataarray[i].scale);
-				child.attr("data-rotation",orchestrationdataarray[i].rot);
+				child.attr("data-rotate",orchestrationdataarray[i].rot);
+				child.attr("data-rotate-x", orchestrationdataarray[i].rotatex);
+				child.attr("data-rotate-y", orchestrationdataarray[i].rotatey)
+
 			}
 		}
 		firstRetrieve = false;
@@ -1052,7 +1058,7 @@ function onOrchThumbClick(event)
 	selectedorchslide.addClass("orchestrationthumbnailselected");
 	$("#depthrange").val((selectedorchslide.attr("data-z"))*-1);
 	$("#scalerange").val(selectedorchslide.attr("data-scale"));
-	$("#slideknob").val(selectedorchslide.attr("data-rotation"));
+	$("#slideknob").val(selectedorchslide.attr("data-rotate"));
 }
 function onOrchThumbMouseDown(event)
 {
@@ -1098,9 +1104,12 @@ function doExport()
 	for (var i = 0; i < slidesArray.length; i++) 
 	{
 		var slide = $("#orch_slide"+slidesArray[i].id);
-		var sliderot = slide.attr("data-rotation");
+		var sliderot = slide.attr("data-rotate");
 		var depth = slide.attr("data-z");
 		var scale = slide.attr("data-scale");
+		var datarotatex = slide.attr("data-rotate-x");
+		var datarotatey = slide.attr("data-rotate-y");
+
 		if(sliderot == undefined)
 		{
 			//console.log("The rotation : "+sliderot);
@@ -1126,6 +1135,9 @@ function doExport()
 		$("#"+slidesArray[i].id).attr("data-rotate", sliderot);
 		$("#"+slidesArray[i].id).attr("data-z", depth);
 		$("#"+slidesArray[i].id).attr("data-scale", scale);
+		$("#"+slidesArray[i].id).attr("data-rotate-x", datarotatex);
+		$("#"+slidesArray[i].id).attr("data-rotate-y", datarotatey);
+
 		var o = {slide : slidesArray[i].id, x:x, y:y};
 		prepositions.push(o);
 	};

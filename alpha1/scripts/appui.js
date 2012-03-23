@@ -9,6 +9,9 @@
  * Impressionist Copyright 2012 Harish Sivaramakrishnan (@hsivaram) 
  */
 var isdisabled = false;
+var rotateX;
+var rotateY;
+var rotateZ;
 //Set up UI
 function setupUI()
 {
@@ -57,6 +60,30 @@ function setupKnobs()
              }
          }
 	);
+	$("#rotationyknob").knob
+	(
+		{
+            "change":function(e)
+            {
+               rotateX = e;    
+               selectedorchslide.css("-webkit-transform", " rotate("+currentsliderotation+"deg) rotateX("+rotateX+"deg) rotateY("+e+"deg)");
+               selectedorchslide.attr("data-rotate-x", e);
+
+                
+            }
+         }
+	);
+	$("#rotationzknob").knob
+	(
+		{
+            "change":function(e)
+            {
+               rotateY= e;    
+               selectedorchslide.css("-webkit-transform", "rotate("+currentsliderotation+"deg) rotateX("+rotateX+"deg) rotateY("+e+"deg)");
+               selectedorchslide.attr("data-rotate-y", e);                           
+             }
+         }
+	);
 	$("#knobit2").knob
 	(
 		{
@@ -75,7 +102,7 @@ function setupKnobs()
             "change":function(e)
             {
                     currentsliderotation = e;
-                    selectedorchslide.attr("data-rotation", e);
+                    selectedorchslide.attr("data-rotate", e);
                     doExport();
                     selectedorchslide.css("-webkit-transform", "rotate("+e+"deg)");
 
@@ -539,7 +566,10 @@ function addOrchestrationThumbnailsFromStore(arr)
 		var rot = props[3].split(":")[1];
 		var z = props[4].split(":")[1];
 		var scale = props[5].split(":")[1];
-		orchestrationdataarray.push({id:id, left:left, top:top, z:z, rot:rot, scale:scale});
+		var rotatex = props[6].split(":")[1];
+		var rotatey = props[7].split(":")[1]
+		console.log("Green: "+rotatex+" and "+rotatey)
+		orchestrationdataarray.push({id:id, left:left, top:top, z:z, rot:rot, scale:scale, rotatex:rotatex, rotatey:rotatey});
 
 	}
 
