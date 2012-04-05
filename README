@@ -4,11 +4,11 @@ Impressionist is conceptualized and developed by Harish Sivaramakrishnan (@hsiva
 
 DEVELOPMENT NOTES 
 
-The current version is alpha1
+The current version is alpha 3
 
-The MASTER branch contains an early preview build of impressionist. The branch which is under active development is alpha2 and will be merged to MASTER
+The MASTER branch contains an early preview build of impressionist. Please sync to this branch if you are planning to work on stuff. The active development will continue on another branch, and will be merged to this from time to time. 
 
-The alpha preview is hosted at http://www.hsivaram.com/impressionist/alpha1 This is currently webkit only. Please use google chrome or safari to run the app. This has not been tested to a great deal on windows (blame it on me having only a mac) and I expect to find more issues on win than on mac. Please do log issues / feature requests in the issues section
+The alpha preview is hosted at http://www.hsivaram.com/impressionist/alpha3 This is currently webkit only. Please use google chrome or safari to run the app. This has not been tested to a great deal on windows (blame it on me having only a mac) and I expect to find more issues on win than on mac. Please do log issues / feature requests in the issues section
 
 CREDITS
 Impressionist uses the following libraries:
