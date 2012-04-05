@@ -1,0 +1,27 @@
+h1,p
+{
+	font-family: 'Armata', sans-serif;
+	font-weight:bold;
+	font-size:60px;
+
+}
+#container
+{
+	width:63%;
+	height:400px;
+	position: absolute;
+	left:200px;
+	top:100px;
+	background: #FFF;
+}
+.descr
+{
+		font-family: 'Lustria', serif;
+
+}
+#smallsup
+{
+	font-size:50%;
+	color:#FFCC00;
+	
+}

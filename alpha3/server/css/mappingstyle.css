@@ -1,0 +1,36 @@
+.slideobject
+{
+	position: absolute;
+}
+.mediumheader
+{
+	width:900px;
+	font-size:120%;
+	line-height:40px;
+}
+.largeheader
+{
+	font-size:200%;
+	cursor:pointer;
+	width:1200px;
+	line-height:100px;
+}
+.jumbo
+{
+	font-size:300%;
+	line-height:200px;
+	width:1800px;
+}
+.slideimage
+{
+	position: absolute;
+}
+.mainslide
+{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	/**/
+}
