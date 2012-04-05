@@ -563,6 +563,16 @@ function doObjectSelection(event)
 	var h = parseInt($(editedobject).css("height").split("px")[0])
 	$("#contextbar").css("left", x+145)
 	$("#contextbar").css("top", (y+h)+90);
+	if($(editedobject).attr("data-pic") == "true")
+	{
+		console.log("picture boss")
+		$("#mask").css("visibility", "visible")
+	}
+	else
+	{
+		$("#mask").css("visibility", "hidden")
+
+	}
 
 	if(!itemSelected)
 	{
@@ -571,9 +581,17 @@ function doObjectSelection(event)
 			$("#deleteBtn").css("left", $(editedobject).css("left"));
 			$("#deleteBtn").css("top", $(editedobject).css("top"));
 	}
-	setFontStyle($(editedobject).attr("data-font-size"));
-	setFont($(editedobject).attr("data-font-face"));
-	$("#colorSelector").css('backgroundColor', $(editedobject).attr("data-selected-color"));
+	if($(editedobject).attr("data-pic") != "true")
+	{
+		setFontStyle($(editedobject).attr("data-font-size"));
+		setFont($(editedobject).attr("data-font-face"));
+		$("#colorSelector").css('backgroundColor', $(editedobject).attr("data-selected-color"));
+	}
+	else
+	{
+		setFontStyle("");
+		setFont("");
+	}
 	//setupColorPicker((editedobject).attr("data-selected-color"))
 	resetSkewValues();
 }

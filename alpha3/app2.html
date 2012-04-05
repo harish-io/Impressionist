@@ -375,11 +375,9 @@
           <a href="#" id="leftarrow" onclick="movePageLeft(event)"><img src="pics/leftarrow.png" style="width:48px; height:48px"></img></a>
           <a href="#" id="rightarrow" onclick="movePageRight(event)"><img src="pics/rightarrow.png" style="width:48px; height:48px"></img></a>
     
-      <canvas id="mask">
-
-      </canvas>
+    
        <div id="contextbar" class="navbar">
-
+             
             <ul class="nav">
      
       <li>&nbsp; &nbsp; &nbsp;</li>     
@@ -433,7 +431,10 @@
 
       </li>
       <li><a><strong>Skew Y</strong></a></li>
-         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/></li>
+           <canvas id="mask">
+
+          </canvas>
       </div>
      <a href="#" class="btn btn-info" onmousemove="onSkewStart()">Skew</a>
 

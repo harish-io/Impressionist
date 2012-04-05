@@ -716,10 +716,10 @@ h3, h4
 {
 	width:45%;
 	height:50px;
-	left:300px;
+	left:0px;
 	background-color: #FFCC00;
 	position: absolute;
-	top:35px;
+	top:0px;
 	visibility: hidden;
 	opacity: 0;
 	-moz-opacity: 0;
