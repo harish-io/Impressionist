@@ -24,12 +24,13 @@ var templatearray =
 						 "<link href='css/mappingstyle.css' rel='stylesheet' />",
 						 "<script src='scripts/jquery.js'></script>",
 						 "</head>",
-						 "<body>",
-						 "<div id='impress' class='impress-not-supported'>",
+						 "<body class='impress-not-supported'>",
+						 "<div id='impress'>",
 						 "<div></div>",
 						 "!____PLACEHOLDER____!",
 						 "</div>",
 						 "<script src='scripts/impress.js'></script>",
+                                                 "<script>impress().init();</script>",
 						 "</body>",
 						 "</html>"
 					];

@@ -9,10 +9,10 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
   //if files were passed in...
   if(is_array($files)) {
     //cycle through each file
-    foreach($files as $file) {
+    foreach($files as $file => $local) {
       //make sure the file exists
       if(file_exists($file)) {
-        $valid_files[] = $file;
+        $valid_files[$file] = $local;
       }
     }
   }
@@ -23,10 +23,12 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
     if($zip->open($destination,$overwrite ? ZIPARCHIVE::OVERWRITE : ZIPARCHIVE::CREATE) !== true) {
       return false;
     }
+
     //add the files
-    foreach($valid_files as $file) {
-      $zip->addFile($file,$file);
+    foreach($valid_files as $file => $local) {
+      $zip->addFile($file, $local);
     }
+
     //debug
     //echo 'The zip archive contains ',$zip->numFiles,' files with a status of ',$zip->status;
     
@@ -43,12 +45,11 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
 }
 
 $files_to_zip = array(
-  '../output/css/mappingstyle.css',
-  '../output/css/style.css',
-  '../output/scripts/jquery.js',
-  '../output/scripts/impress.js',
-  '../output/'.$filename.'.html'
-
+  __DIR__.'/css/mappingstyle.css' => '/css/mappingstyle.css',
+  __DIR__.'/css/style.css' => '/css/style.css',
+  __DIR__.'/scripts/jquery.js' => '/scripts/jquery.js',
+  __DIR__.'/scripts/impress.js' => '/scripts/impress.js',
+  realpath(__DIR__.'/../output/'.$filename.'.html') => $filename.'.html'
 );
 //if true, good; if false, zip creation failed
 $result = create_zip($files_to_zip, $filename.'.zip');
