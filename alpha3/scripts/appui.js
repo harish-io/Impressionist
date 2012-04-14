@@ -186,10 +186,16 @@ function setFontStyle(value)
 	{
 		dropdownlabel = "Small"
 	}
-	$(editedobject).attr("data-font-size", value);
+
+	if(editedobject != "")
+        {
+		adjustObjectPositions(
+			$(editedobject)
+				.attr("data-font-size", value)
+				.attr("class","ui-draggable slideobject itemselected "+value)
+		);
+	}
 	$("#fontstyledropdown").html(dropdownlabel+'<b class="caret">');
-	$(editedobject).attr("class","ui-draggable slideobject itemselected "+value);
-	adjustObjectPositions($(editedobject))
 }
 function setFont(font)
 {
