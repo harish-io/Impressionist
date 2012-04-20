@@ -12,7 +12,7 @@
 $(document).ready(
   function(e)
   {
-      if($.browser.webkit)
+      if(Utilities.isSupportedUA())
       {
           //alert("Webkit");
           $("#errorMessage").css("visibility", "hidden");
@@ -42,4 +42,5 @@ $(document).ready(
     </a>
   </p>
 </div>
+<script type="text/javascript" src="scripts/utilities.js"></script>
 </body>
