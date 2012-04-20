@@ -75,7 +75,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#" id="brandlogo">impressionist <sup id="smallsup">alpha1</sup></a>
+        <a class="brand" href="#" id="brandlogo">impressionist <sup id="smallsup">alpha3</sup></a>
         <div class="nav-collapse">
           <ul class="nav">
               <li class="dropdown">
@@ -108,7 +108,7 @@
           <span class="icon-bar"></span>
         </a>
         <div class="nav-collapse">
-          <ul class="nav">
+         <ul class="nav">
 			<li>
 				<div class="btn-group">
 					<a class="btn btn-warning btn-small" onclick="addSlide()" href="#"><i class="icon-plus-sign" ></i>  New Slide     </a>
@@ -122,6 +122,8 @@
  				<a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>
 				</div>
 			</li>
+    </ul>
+    <!-- 
 			<li class="divider-vertical"></li>
           	<li>
           	<div class="btn-group">
@@ -137,7 +139,7 @@
               <div class="btn-group">
               <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
               <ul class="dropdown-menu" id="fontsizedropdown">
-              	<!--<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>-->
+              	<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>
                 <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
                 <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
                 <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
@@ -177,7 +179,7 @@
   			 <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
   			 
 		 	</li>
-          </ul>
+          </ul>-->
           <ul class="nav pull-right">
             <li class="divider-vertical"></li>
             <li class="dropdown" id="viewchangedropdown">
@@ -272,8 +274,7 @@
  	 	
  	 </div>
  	 <div class="presentationarea" id="drawingboard">
-      <div id="contextbar">
-      </div>
+     
  	 	 	<a href="#" id="deleteBtn" class="deleteicon" style="z-index:10; left:-20000px" onclick="deleteObject()">x</a>
  	 </div>
  	<input id="editorBox" style="z-index:3000; left:-20000px" />
@@ -362,11 +363,69 @@
           </div>
           <a href="#" id="leftarrow" onclick="movePageLeft(event)"><img src="pics/leftarrow.png" style="width:48px; height:48px"></img></a>
           <a href="#" id="rightarrow" onclick="movePageRight(event)"><img src="pics/rightarrow.png" style="width:48px; height:48px"></img></a>
-          <a href="#" class="btn btn-info" onmousemove="onSkewStart()">Skew</a>
+    
+    
+       <div id="contextbar" class="navbar">
+             
+            <ul class="nav">
+     
+      <li>&nbsp; &nbsp; &nbsp;</li>     
+     
+            <li>
+            <div class="btn-group">
+        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
+        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
+      </div>
+    </li>
+     <li class="divider-vertical"></li>
 
-      <canvas id="mask">
+  <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="fontsizedropdown">
+                <!--<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>-->
+                <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
+                <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
+                <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Paragraph</a></li>
+                <li><a href="#">Custom</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-toggle="dropdown" data-target="fonttypedropdown" id="fontdropdown"> Select Font &nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu" id="fonttypedropdown">
+                <li class="shadedanchor"><a>Sans Serif Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Inika')">Inika</a></li>
+                <li><a href="#" onclick="setFont('Fresca')">Fresca</a></li>
+                <li><a href="#" onclick="setFont('Doppio One')">Doppio One</a></li>
+                <li><a href="#" onclick="setFont('Montserrat')">Montserrat</a></li>
+                <li><a href="#" onclick="setFont('Bevan')">Bevan</a></li>
+                <li class="divider"></li>
+                <li class="shadedanchor"><a>Decorative Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Henny Penny')">Henny Penny</a></li>
+                <li><a href="#" onclick="setFont('Ribeye Marrow')">Ribeye Marrow</a></li>
+                <li><a href="#" onclick="setFont('Unkempt')">Unkempt</a></li>
+              </ul>
+            </div>
+            </li>
+            <li class="divider-vertical"></li>
+        <li><div id="colorSelector"></div></li>
+        <li class="divider-vertical"></li>
+        <li><a><strong>Skew X</strong></a></li>
+         <li><input id="knobit1" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
 
-      </canvas>
+      </li>
+      <li><a><strong>Skew Y</strong></a></li>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/></li>
+           <canvas id="mask">
+
+          </canvas>
+      </div>
+     <a href="#" class="btn btn-info" onmousemove="onSkewStart()">Skew</a>
 
     <div id="footerbar">
      </div>
