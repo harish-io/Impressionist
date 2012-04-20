@@ -40,8 +40,7 @@
 	  $(document).ready(function(e)
 		{
       $("#mybody").css("visibility", "hidden");
-      var bool = doUACheck();
-      if(bool)
+      if(Utilities.isSupportedUA())
       {
         $("#mybody").css("visibility", "visible");
 			  init();
@@ -51,17 +50,6 @@
         document.location.href = "index.html";
       }
 		});
-    function doUACheck()
-    {
-      if($.browser.webkit)
-      {
-        return true
-      }
-      else
-      {
-        return false;
-      }
-    }
     </script>
     <script type="text/javascript">
 
@@ -440,4 +428,6 @@
 
     <div id="footerbar">
      </div>
+     
+     <script type="text/javascript" src="scripts/utilities.js"></script>
   </body>
