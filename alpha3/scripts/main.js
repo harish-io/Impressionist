@@ -543,15 +543,17 @@ function onSlideMouseUp(event)
 //Set the edited object when an object is selected
 function doObjectSelection(event)
 {
+	console.log("fontStyle "+fontStyle);
 	//event.preventDefault();
 	toggleToolbarControls(true);
 	$("#deleteBtn").css("opacity", 0)
 	$("#contextbar").css("visibility", "visible");
-
+	var prevFont;
 	if("#"+event.target.id != editedobject)
 	{
 			//$(editedobject).text($("#editorBox").val());
 		    $(editedobject).removeClass("itemselected");
+		    prevFont = $(editedobject).css("font-family");
 			//itemSelected = false;
 			currentAddObject =""
 			//hideEditorBox();
@@ -559,6 +561,8 @@ function doObjectSelection(event)
 	editedobject = "#"+event.target.id;
 	var x = parseInt($(editedobject).css("left").split("px")[0]);
 	var y = parseInt($(editedobject).css("top").split("px")[0]);
+	console.log("prev font "+prevFont);
+	$(editedobject).css("font-family", prevFont)
 	console.log(x+"     --   "+y)
 	var h = parseInt($(editedobject).css("height").split("px")[0])
 	$("#contextbar").css("left", x+145)
@@ -643,10 +647,12 @@ function triggerObjectAdd(event)
 	 		}
 			if("#"+event.target.id == addTarget || bypasscondition == true)
 			{
+				objectcounter = Math.round(Math.random()*100000);
 				var str = largetext.split("!ID!").join("____object"+objectcounter);
 				str = str.split("!OBJECT_SIZE!").join(fontStyle);
 				$(addTarget).append(str)	
 				objectmap.push({index:objectcounter});
+				console.log("Object id "+"#____object"+objectcounter)
 				var obj = calculateOrchCoords(event.offsetX, event.offsetY);
 				$("#____object"+objectcounter).css("left", event.offsetX);
 				$("#____object"+objectcounter).css("top", event.offsetY);
@@ -800,18 +806,20 @@ function toastEditor(event)
 		var modifiedx = parseInt(x.split("px")[0])+150;
 		var modifiedy = parseInt(y.split("px")[0])+78;
 		//editedobject = "#"+event.target.id;
-		hideEditedObject();
+		//hideEditedObject();
 
 
 		//$("#"+event.target.id).css("opacity", 0);
-		$("#editorBox").attr("class", "largeeditor largeheader");
+		$("#editorBox").val($(editedobject).text())
+		//$("#editorBox").attr("class", "largeeditor largeheader");
 		$("#editorBox").css("left", modifiedx);
 		$("#editorBox").css("top", modifiedy);
 		$("#editorBox").css("width", w);
-		//$("#editorBox").css("font-family", $(editedobject).css("font-family"));
-		//$("#editorBox").css("height", h);
+		$("#editorBox").css("font-family", "verdana");
+		$("#editorBox").css("font-size", "200%");
+		$("#editorBox").css("height", h);
 		$("#editorBox").focus();
-		$("#editorBox").val($(editedobject).text())
+		
 	}
 }
 function onKeyUp(event)

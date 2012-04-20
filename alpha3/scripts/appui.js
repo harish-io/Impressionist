@@ -550,9 +550,10 @@ function addSlide()
 function cloneElement()
 {
 	console.log("Cloning now...")
+	objectcounter = Math.round(Math.random()*100000);
 	clonedelement = $(objecttocopy).clone();
 	$(objecttocopy).removeClass("itemselected");
-	objectcounter++;
+	//objectcounter++;
 	clonedelement.attr("id", "____object"+objectcounter);
 	clonedelement.css("position", "absolute");
 	clonedelement.bind("mousedown", doObjectSelection);
