@@ -200,8 +200,9 @@ function setFontStyle(value)
 function setFont(font)
 {
 	selectedFont = font;
-	$(editedobject).attr("data-font-face", font)
-	$("#fontdropdown").html(selectedFont+'<b class="caret">');
+	currentSelectedFont = font;
+	$(editedobject).attr("data-font-face", currentSelectedFont)
+	$("#fontdropdown").html(currentSelectedFont+'<b class="caret">');
 	if(editedobject != "")
 	{
 		$(editedobject).css("font-family", selectedFont);
@@ -548,6 +549,7 @@ function addSlide()
 	editedobject = "";
 	slidecounter++;
 	$("#deleteBtn").css("left", -20000);
+
 }
 function cloneElement()
 {
