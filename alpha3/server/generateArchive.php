@@ -5,7 +5,7 @@
 
 //session_start();
 $result = $_POST["data"];
-$filename = $_POST["filename"];
+$filename = stripslashes($_POST["filename"]);
 //echo $_SESSION['htmldata'];
 $fp = fopen('../output/'.$filename.".html", 'w');
 fwrite($fp, stripslashes($result));
