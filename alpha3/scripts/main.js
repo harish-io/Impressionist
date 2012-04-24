@@ -775,7 +775,7 @@ function removePrevSelection()
 		slideselected = false;
 		
 	}
-	//$(editedobject).removeClass("itemselected");
+	$(editedobject).removeClass("itemselected");
 }
 function toastEditor(event)
 {

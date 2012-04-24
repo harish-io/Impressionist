@@ -547,6 +547,7 @@ function addSlide()
 	slidemap.push({index:slidecounter});
 	editedobject = "";
 	slidecounter++;
+	$("#deleteBtn").css("left", -20000);
 }
 function cloneElement()
 {
