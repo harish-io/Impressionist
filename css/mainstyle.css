@@ -3,7 +3,8 @@ body
 	margin-left: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
-	overflow-x: hidden;
+	overflow: hidden;
+	overflow-x:hidden;
 	font-family: 'Armata', sans-serif;
 }
 a
@@ -196,6 +197,9 @@ h3, h4
 	background-image : url("../pics/bgimage.png");
 	background-repeat: repeat;
 	position: absolute;
+	/*overflow-x: scroll;
+	overflow-y:scroll;
+	*/
 }
 .thumbnailselected
 {
@@ -209,19 +213,21 @@ h3, h4
 	top:0px;
 	width:100%;
 	height:100%;
-	overflow: hidden;
+	overflow: scroll;
 }
 .mediumheader
 {
 	/*width:550px;*/
-	font-size:400%;
+	font-size:200%;
 	line-height:60px;
+	white-space: nowrap;
 }
 .largeheader
 {
-	font-size:700%;
+	font-size:400%;
 	cursor:pointer;
 	line-height:100px;
+	white-space: nowrap;
 }
 .thumbnail_largeheader
 {
@@ -587,7 +593,7 @@ h3, h4
 	position: absolute;
 	bottom:0px;
 	width:100%;
-	height:40px;
+	height:35px;
 	/*margin-bottom: -20px;*/
 	background: #45484d; /* Old browsers */
 	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
@@ -738,6 +744,12 @@ h3, h4
 {
 	font-size:50%
 	
+}
+#bigcontainer
+{
+	width:100%;
+	height:100%;
+	overflow: hidden;
 }
 #contextbar
 {

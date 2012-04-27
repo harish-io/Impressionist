@@ -16,7 +16,7 @@ var currentsliderotation = 0;
 //Set up UI
 function setupUI()
 {
-	console.log("Setup UI");
+	console.log("Setup UI "+screen.width+"  "+screen.height);
 	$("#contextbar").css("visibility","hidden");
 	$("#subnav2").css("z-index", -10000);
 	$("#subnav").css("z-index", 10000);

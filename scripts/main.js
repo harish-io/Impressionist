@@ -725,7 +725,7 @@ function adjustObjectPositions(item)
 	{
 		item.css("top", 20)
 	}
-	if(t > 400)
+	/*if(t > 400)
 	{
 		item.css("top", 400)
 	}
@@ -733,6 +733,7 @@ function adjustObjectPositions(item)
 	{
 		item.css("left", 600)
 	}
+	*/
 	l = parseInt(item.css("left").split("px")[0]);
 	t = parseInt(item.css("top").split("px")[0]);
 	h = parseInt(item.css("height").split("px")[0]);

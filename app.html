@@ -4,7 +4,7 @@
     <title>impressionist - v 0.0.1.0</title>
     <link href="css/mainstyle.css" rel="stylesheet" />
     <link href="colorpicker/css/colorpicker.css" rel="stylesheet" />
-	 <link href="colorpicker/css/layout.css" rel="stylesheet" />
+   <link href="colorpicker/css/layout.css" rel="stylesheet" />
     <link href="scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
     <link href='http://fonts.googleapis.com/css?family=Inika:400,700' rel='stylesheet' type='text/css'>
@@ -19,39 +19,39 @@
     <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
 
 
-	
-	<script src="scripts/jquery.js"></script>
+  
+  <script src="scripts/jquery.js"></script>
   <script src="scripts/matrices.js"></script>
 
   <script src="scripts/datastore.js"></script>
-	<script src="scripts/appui.js"></script>
+  <script src="scripts/appui.js"></script>
   <script src="scripts/fileops.js"></script>
 
-	<script src="scripts/templ.js"></script>
-	<script src="scripts/knobdial.js"></script>
-	<script src="scripts/main.js"></script>
-	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+  <script src="scripts/templ.js"></script>
+  <script src="scripts/knobdial.js"></script>
+  <script src="scripts/main.js"></script>
+  <script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
-	<script type="text/javascript" src="scripts/bootstrap/js/bootstrap-button.js"></script>
-	<script type="text/javascript" src="scripts/bootstrap/js/bootstrap-dropdown.js"></script>
-	<script type="text/javascript" src=" scripts/bootstrap/js/bootstrap-button.js"></script>
-	<script type="text/javascript" src="scripts/bootstrap/js/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-button.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-dropdown.js"></script>
+  <script type="text/javascript" src=" scripts/bootstrap/js/bootstrap-button.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-modal.js"></script>
     <script>
-	  $(document).ready(function(e)
-		{
+    $(document).ready(function(e)
+    {
       $("#mybody").css("visibility", "hidden");
       
       if(Utilities.isSupportedUA())
       {
         $("#mybody").css("visibility", "visible");
-			  init();
+        init();
       }
       else
       {
         document.location.href = "index.html";
       }
-		});
+    });
     </script>
     <script type="text/javascript">
 
@@ -110,37 +110,37 @@
         </a>
         <div class="nav-collapse">
          <ul class="nav">
-			<li>
-				<div class="btn-group">
-					<a class="btn btn-warning btn-small" onclick="addSlide()" href="#"><i class="icon-plus-sign" ></i>  New Slide     </a>
-				</div>
-			</li>  
-			<li>&nbsp; &nbsp; &nbsp;</li>   	
-			 <li class="divider-vertical"></li>
-			 <li>
-			 	<div class="btn-group" id="typeRadio">
- 				<a id="textBtn"  class="btn btn-info btn-small" href="#" onclick="setObjectType('text')"><i class="icon-text-width" ></i>&nbsp;  Text</a>
- 				<a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>
-				</div>
-			</li>
+      <li>
+        <div class="btn-group">
+          <a class="btn btn-warning btn-small" onclick="addSlide()" href="#"><i class="icon-plus-sign" ></i>  New Slide     </a>
+        </div>
+      </li>  
+      <li>&nbsp; &nbsp; &nbsp;</li>     
+       <li class="divider-vertical"></li>
+       <li>
+        <div class="btn-group" id="typeRadio">
+        <a id="textBtn"  class="btn btn-info btn-small" href="#" onclick="setObjectType('text')"><i class="icon-text-width" ></i>&nbsp;  Text</a>
+        <a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>
+        </div>
+      </li>
     </ul>
     <!-- 
-			<li class="divider-vertical"></li>
-          	<li>
-          	<div class="btn-group">
- 				<Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
- 				<Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
-			</div>
-		</li>
-		 <li class="divider-vertical"></li>
-		
+      <li class="divider-vertical"></li>
+            <li>
+            <div class="btn-group">
+        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
+        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
+      </div>
+    </li>
+     <li class="divider-vertical"></li>
+    
 
 
-	<li class="dropdown">
+  <li class="dropdown">
               <div class="btn-group">
               <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
               <ul class="dropdown-menu" id="fontsizedropdown">
-              	<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>
+                <li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>
                 <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
                 <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
                 <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
@@ -170,16 +170,16 @@
             </div>
             </li>
             <li class="divider-vertical"></li>
-  			<li><div id="colorSelector"></div></li>
-  			<li class="divider-vertical"></li>
-  			<li><a><strong>Skew X</strong></a></li>
-  			 <li><input id="knobit1" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+        <li><div id="colorSelector"></div></li>
+        <li class="divider-vertical"></li>
+        <li><a><strong>Skew X</strong></a></li>
+         <li><input id="knobit1" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
 
-		 	</li>
-		 	<li><a><strong>Skew Y</strong></a></li>
-  			 <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
-  			 
-		 	</li>
+      </li>
+      <li><a><strong>Skew Y</strong></a></li>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+         
+      </li>
           </ul>-->
           <ul class="nav pull-right">
             <li class="divider-vertical"></li>
@@ -202,11 +202,11 @@
       <div class="container" style="width: auto;">
         <div class="nav-collapse">
           <ul class="nav">
-	
-			 <li><a>Rotation</a></li>
-			 <li>
-			 	<input id="slideknob" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
-			</li>
+  
+       <li><a>Rotation</a></li>
+       <li>
+        <input id="slideknob" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+      </li>
       <li><a> RotationX</a></li>
 
        <li>
@@ -227,13 +227,13 @@
        <li>
         <input id="scalerange" type="range" min="1" max="9" />
       </li>
-          	<li>
-          	<div class="btn-group">
- 				
-			</div>
-		</li>
+            <li>
+            <div class="btn-group">
+        
+      </div>
+    </li>
 
-		<li class="dropdown">
+    <li class="dropdown">
               
             </li>
             <li class="dropdown">
@@ -244,10 +244,10 @@
             <li class="divider-vertical"></li>
 
           <li>
-				<div class="btn-group">
-					<a class="btn btn-info btn-small" onclick="preparePreview()" href="#"><i class="icon-play-circle" ></i>  Preview     </a>
-				</div>
-			</li>  
+        <div class="btn-group">
+          <a class="btn btn-info btn-small" onclick="preparePreview()" href="#"><i class="icon-play-circle" ></i>  Preview     </a>
+        </div>
+      </li>  
         <li>&nbsp; &nbsp; </li>
       <li>
 
@@ -271,39 +271,39 @@
     </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
   <div class="container1">
- 	 <div class="slideholder" id="slidethumbnailholder">
- 	 	
- 	 </div>
- 	 <div class="presentationarea" id="drawingboard">
+   <div class="slideholder" id="slidethumbnailholder">
+    
+   </div>
+   <div class="presentationarea" id="drawingboard">
      
- 	 	 	<a href="#" id="deleteBtn" class="deleteicon" style="z-index:10; left:-20000px" onclick="deleteObject()">x</a>
- 	 </div>
- 	<input id="editorBox" style="z-index:3000; left:-20000px" />
- 	 <div class="orchestration" id="orchestrationarea">
- 	 	<div class="vp1">
- 	 	</div>
- 	 	<div class="vp2">
- 	 	</div>
- 	 	<div class="vp3">
- 	 	</div>
- 	 	<div class="vp4">
- 	 	</div>
- 	 	<div class="vp6">
- 	 	</div>
- 	 	<div class="vp7">
- 	 	</div>
- 	 	<div class="vp8">
- 	 	</div>
- 	 	<div class="vp9">
- 	 	</div>
- 	 	<div class="vertline">
- 	 	</div>
- 	 	<div class="horizline">
- 	 	</div>
- 	 	<span class="label label-important rangecall">Range -6000px to 6000px</span>
+      <a href="#" id="deleteBtn" class="deleteicon" style="z-index:10; left:-20000px" onclick="deleteObject()">x</a>
+   </div>
+  <input id="editorBox" style="z-index:3000; left:-20000px" />
+   <div class="orchestration" id="orchestrationarea">
+    <div class="vp1">
+    </div>
+    <div class="vp2">
+    </div>
+    <div class="vp3">
+    </div>
+    <div class="vp4">
+    </div>
+    <div class="vp6">
+    </div>
+    <div class="vp7">
+    </div>
+    <div class="vp8">
+    </div>
+    <div class="vp9">
+    </div>
+    <div class="vertline">
+    </div>
+    <div class="horizline">
+    </div>
+    <span class="label label-important rangecall">Range -6000px to 6000px</span>
     <span id="splithere"></span>
- 	</div>
- 	 <div id="outputconsole">
+  </div>
+   <div id="outputconsole">
 
      </div>
  </div>
@@ -431,6 +431,7 @@
 
     <div id="footerbar">
      </div>
+
      
      <script type="text/javascript" src="scripts/utilities.js"></script>
   </body>
