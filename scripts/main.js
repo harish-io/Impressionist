@@ -876,6 +876,7 @@ function onKeyUp(event)
 			resetEditedObject();
 			positionDeleteButton()
 			hideEditorBox();	
+			$("#play").css("visibility", "hidden")
 
 		}
 		else if(event.keyCode == 27)
@@ -884,6 +885,8 @@ function onKeyUp(event)
 			resetEditedObject();
 			positionDeleteButton();
 			hideEditorBox();	
+			$("#play").css("visibility", "hidden")
+
 			
 		}
 }
