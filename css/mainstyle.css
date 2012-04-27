@@ -6,6 +6,7 @@ body
 	overflow: hidden;
 	overflow-x:hidden;
 	font-family: 'Armata', sans-serif;
+	-webkit-user-select: none;
 }
 a
 {
