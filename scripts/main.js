@@ -785,6 +785,7 @@ function onThumbnailClick(event)
 	//getAllChildren();
 	$("#deleteBtn").css("left", -10000);
 	$("#contextbar").css("visibility", "hidden");
+	$("#play").css("visibility", "hidden");
 	if("#"+event.currentTarget.id != currentSelected)
 	{
 		removePrevSelection();
