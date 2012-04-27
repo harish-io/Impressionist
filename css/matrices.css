@@ -1,0 +1,162 @@
+html, body {
+	padding:0;
+	margin:0;
+	background:#def;
+}
+
+body {
+	font-family:arial,tahoma,verdana;
+	font-size:75%;
+	line-height:1.5;
+	padding:20px;
+}
+
+h1 {
+	font-family:georgia, garamond, serif;
+	font-weight:normal;
+	color:rgba(0,0,0,0.5);
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+
+p {
+	width:230px;
+}
+
+#save {
+	width:300px;
+	height:300px;
+	padding:20px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-150px 0 0 -150px;
+	border:1px dashed rgba(0,0,0,0.5);
+	color:rgba(0,0,0,0.5);
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	
+}
+	#save a.reset {
+		position:absolute;
+		color:rgba(0,0,0,0.5);
+		left:20px;
+		bottom:20px;
+		text-decoration:none;
+		font-size:10px;
+	}
+		#save a.reset:hover {
+			-webkit-transform: matrix(1.4172,-0.3424,0.3074,1.2345,0,0); 
+			-moz-transform: matrix(1.4172,-0.3424,0.3074,1.2345,0px,0px); 
+			-ms-transform: matrix(1.4172,-0.3424,0.3074,1.2345,0,0); 
+			-o-transform: matrix(1.4172,-0.3424,0.3074,1.2345,0,0); 
+			transform: matrix(1.4172,-0.3424,0.3074,1.2345,0,0);
+		}
+
+#play {
+	width:300px;
+	height:10px;
+	position:absolute;
+	/*
+	padding:20px;
+	
+	*/
+	/*left:50%;
+	top:50%;*/
+	margin:-150px 0 0 -150px;
+	/*background:#ff9900;*/
+
+	-webkit-user-select: none;
+
+	/*-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.15);
+	box-shadow: 0 0 10px rgba(0,0,0,0.15);
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*/
+
+	-webkit-transform: translate3d(0,0,0);
+}
+	#play span {
+		position:absolute;
+		/*border:1px solid silver;
+		background:#FFCC00;
+		font-size:14px;
+		padding:4px 8px;
+		*/
+		white-space:nowrap;
+		cursor:pointer;
+		
+		/*
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		*/
+	}
+		#play span:hover {
+			border-color:gray;
+		}
+
+		#play .rotate {
+			right:-50px;
+			top:50%;
+			cursor: n-resize;
+		}
+
+		#play .scale {
+			bottom:-40px;
+			right:-50px;
+			cursor: nw-resize;
+
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		#play .skewx {
+			left:50%;
+			top:-15px;
+			/*bottom:-15px;*/
+			cursor: w-resize;
+		}
+
+		#play .skewy {
+			left:-38px;
+			top:50%;
+			cursor: n-resize;
+
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+		}
+
+		#play .move {
+			top:10px;
+			right:10px;
+			cursor: move;
+		}
+
+#output {
+	position:absolute;
+	width:100%;
+	bottom:0;
+	left:0;
+	padding:20px 20px;
+	border-top:1px solid gray;
+	background:#fff;
+	font-family: courier new;
+	text-align:center;
+	white-space:pre;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}

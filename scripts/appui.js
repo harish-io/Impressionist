@@ -54,7 +54,7 @@ function onFocusOut(event)
 //also bind the events to the depth and scale sliders.
 function setupKnobs()
 {
-	$("#knobit1").knob
+	/*$("#knobit1").knob
 	(
 		{
             "change":function(e)
@@ -66,6 +66,7 @@ function setupKnobs()
              }
          }
 	);
+*/
 	$("#rotationxknob").knob
 	(
 		{
@@ -90,6 +91,7 @@ function setupKnobs()
              }
          }
 	);
+	/*
 	$("#knobit2").knob
 	(
 		{
@@ -102,6 +104,7 @@ function setupKnobs()
             }
          }
 	);
+*/
 	$("#slideknob").knob
 	(
 		{
@@ -142,6 +145,9 @@ function setupColorPicker(color)
 		color: '#0000ff',
 		onShow: function (colpkr)
 		 {
+		 	$(editedobject).css("z-index", 0)
+		 	$("#deleteBtn").css("z-index", 0)
+
 		 	if(!isdisabled)
 		 	{
 				$(colpkr).fadeIn(500);
@@ -150,6 +156,8 @@ function setupColorPicker(color)
 		},
 		onHide: function (colpkr) 
 		{
+			$(editedobject).css("z-index", 20)
+			$("#deleteBtn").css("z-index", 40)
 			$(colpkr).fadeOut(500);
 			return false;
 		},
@@ -407,6 +415,7 @@ function positionDeleteButton()
 		var y = parseInt($(editedobject).css("top").split("px")[0]) - 15;
 		$("#deleteBtn").css("left", x);
 		$("#deleteBtn").css("top", y);
+
 	}
 	else
 	{
@@ -444,23 +453,23 @@ function toggleToolbarControls(bool)
 {
 	if(!bool)
 	{
-		$("#knobit1").attr("readonly", "readonly");
-		$("#knobit2").attr("readonly", "readonly");
+		/*$("#knobit1").attr("readonly", "readonly");
+		$("#knobit2").attr("readonly", "readonly");*/
 		$("#colorSelector").fadeTo('slow',.3);
 		$("#fontstyledropdown").fadeTo("slow",.5);
 		$("#fontdropdown").fadeTo("slow",.5);
-		$("#mask").css("visibility", "visible")
+		//$("#mask").css("visibility", "visible")
 	
 		isdisabled = true;
 	}
 	else
 	{
-		$("#knobit1").removeAttr("readonly");
-		$("#knobit2").removeAttr("readonly");
+		/*$("#knobit1").removeAttr("readonly");
+		$("#knobit2").removeAttr("readonly");*/
 		$("#colorSelector").fadeTo('slow',1)
 		$("#fontstyledropdown").fadeTo("slow",1);
 		$("#fontdropdown").fadeTo("slow", 1)
-		$("#mask").css("visibility", "hidden")
+		//$("#mask").css("visibility", "hidden")
 
 
 		isdisabled = false;		
@@ -524,6 +533,7 @@ function addSlidesFromStore(item)
 function addSlide()
 {
 	$("#contextbar").css("visibility", "hidden")
+	$("#play").css("visibility", "hidden")
 	var str = slidethumbtemplate.split("!SLIDE_ID!").join("slidethumb"+slidecounter);
 	str = str.split("!SLIDENUMBER!").join("slide_number_sliderthumb"+slidecounter);
 	str = str.split("!THUMBDISPLAYNUMBER!").join("slide_number_sliderthumb"+slidecounter);

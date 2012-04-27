@@ -214,6 +214,7 @@ h3, h4
 	width:100%;
 	height:100%;
 	overflow: scroll;
+	-webkit-user-select: none;
 }
 .mediumheader
 {
@@ -384,7 +385,7 @@ h3, h4
 	text-decoration:none;
 	font-family:verdana;
 	font-size:10px;
-	/*z-index:0;*/
+	z-index:30;
 }
 #thumbdelete
 {
@@ -751,17 +752,27 @@ h3, h4
 	height:100%;
 	overflow: hidden;
 }
+#knobit1
+{
+	visibility: hidden;
+}
+#knobit2
+{
+	visibility: hidden;
+}
 #contextbar
 {
 	position: absolute;
-	width:600px;
+	width:330px;
+	visibility: hidden;
 	/*height:50px;*/
 	background-color: #222;
 	display: inline;
-	z-index:200;
-	-webkit-box-shadow: 2px 1px 1px 1px rgba(150, 150, 150, 0.5);
+	z-index:20001;
+	/*-webkit-box-shadow: 2px 1px 1px 1px rgba(150, 150, 150, 0.5);
 	-moz-box-shadow: 2px 1px 1px 1px rgba(150, 150, 150, 0.5);
 	box-shadow: 2px 1px 1px 1px rgba(150, 150, 150, 0.5);
+	*/
 }
 ::-webkit-scrollbar {
     width: 7px;

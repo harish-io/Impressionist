@@ -139,7 +139,8 @@ function init()
 	//localStorage.clear();	
 
 	$(document).bind("mouseup", onDocMouseUp);
-	$("#mask").css("visibility", "visible")
+	//$("#mask").css("visibility", "visible")
+	$("#play").css("visibility","hidden")
 	setupUI();
 	setupKnobs();
 	setupColorPicker();
@@ -517,6 +518,9 @@ function onSlideMouseUp(event)
 	if(target.length > 1)
 	{
 		$("#contextbar").css("visibility", "hidden");
+		$("#play").css("visibility", "hidden");
+
+
 		$(editedobject).removeClass("itemselected");
 		itemSelected = false;
 		$("#deleteBtn").css("opacity", 0);
@@ -541,14 +545,20 @@ function onSlideMouseUp(event)
 	}
 	addObjectFlag = false;
 }
+function calculateTextWidth()
+{
+
+}
 //Set the edited object when an object is selected
 function doObjectSelection(event)
 {
 	console.log("fontStyle "+fontStyle);
 	//event.preventDefault();
 	toggleToolbarControls(true);
+	$("#play").css("visibility", "visible");
 	$("#deleteBtn").css("opacity", 0)
 	$("#contextbar").css("visibility", "visible");
+
 	var prevFont;
 	if("#"+event.target.id != editedobject)
 	{
@@ -562,7 +572,16 @@ function doObjectSelection(event)
 	editedobject = "#"+event.target.id;
 	var x = parseInt($(editedobject).css("left").split("px")[0]);
 	var y = parseInt($(editedobject).css("top").split("px")[0]);
+	var w = $(editedobject).width()
+	var h = parseInt($(editedobject).css("height").split("px")[0]);
+	$("#play").css("left",x + 300)
+	$("#play").css("top", y + 220);
+	$("#play").css("width", w)
+	$("#play").css("height", h)
+	var wt = $(editedobject).css("-webkit-transform");
+	$("#play").css("-webkit-transform",wt);
 	console.log("prev font "+currentSelectedFont);
+	$(editedobject).css("z-index", 20)
 	$(editedobject).css("font-family", currentSelectedFont);
 	console.log(x+"     --   "+y)
 	var h = parseInt($(editedobject).css("height").split("px")[0])
@@ -640,7 +659,8 @@ function triggerObjectAdd(event)
 		bypasscondition = false;
 	}
 	if((currentAddObject == "text" && "#"+event.target.id == addTarget) || (currentAddObject == "text" && bypasscondition == true))
-	{			
+	{		
+			$("#play").css("-webkit-transform","matrix(1,0,0,1,0,0)")
 	    	if(colorboxopen)
 	 		{
 	 			colorboxopen = false;
@@ -704,6 +724,8 @@ function onObjectDrag(event)
 		item.css("top", 20)
 	}
 	$("#contextbar").css("visibility", "hidden");
+	$("#play").css("visibility", "hidden");
+
 	
 }
 function onMouseUp(event)
@@ -711,6 +733,15 @@ function onMouseUp(event)
 	var item = $("#"+event.target.id)
 	adjustObjectPositions(item)
 	positionDeleteButton();
+	var x = parseInt($(editedobject).css("left").split("px")[0]);
+	var y = parseInt($(editedobject).css("top").split("px")[0]);
+	var w = $(editedobject).width()
+	var h = parseInt($(editedobject).css("height").split("px")[0]);
+	$("#play").css("left",x + 300)
+	$("#play").css("top", y + 220);
+	$("#play").css("width", w)
+	$("#play").css("height", h)
+	
 }
 function adjustObjectPositions(item)
 {
@@ -740,6 +771,14 @@ function adjustObjectPositions(item)
 	$("#contextbar").css("visibility", "visible");
 	$("#contextbar").css("left", l + 145);
 	$("#contextbar").css("top", (t+h)+90);
+	$("#play").css("visibility", "visible");
+	/*$("#play").css("left", l);
+	$("#play").css("top", t)*/
+	adjustSubspanPositions()
+}
+function adjustSubspanPositions()
+{
+	//$("#spanrotate").css("top", 1)
 }
 function onThumbnailClick(event)
 {
@@ -1318,7 +1357,7 @@ function generatePreview(str)
 function showOrchestrationView()
 {
 	$("#contextbar").css("visibility","hidden")
-	$("#mask").css("visibility", "hidden")
+	//$("#mask").css("visibility", "hidden")
 	togglePaginator(true);
 	hidePresentationView();
 	findAndArrangeSlides();

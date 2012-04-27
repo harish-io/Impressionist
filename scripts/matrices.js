@@ -10,7 +10,7 @@
 	
 	// decimals of the matrix css output
 	var FIXED = 3; 
-
+	var targetobject;
 	/**
 	 * Various helpers
 	 *
@@ -97,7 +97,7 @@
 		 *
 		 */
 		handleMousedown: function(e){
-			e.preventDefault();
+			//e.preventDefault();
 			
 			// jquery wraps the native event, need it for e.touches though
 			var ev = this.getTouch(e);
@@ -143,7 +143,8 @@
 			 *
 			 * <3 math <3
 			 */
-			switch (this.mode) {
+			 var actualmode = this.mode.split(" ")[0];
+			switch (actualmode) {
 				case 'rotate':
 					var moved = point.subtract(anchor);
 					var y = moved.y;
@@ -180,7 +181,11 @@
 
 			// store and show the current transformation
 			this.current = matrix;
+			targetobject = $(editedobject).attr("id");
 			this.transform(matrix);
+			console.log(this+" aodeeeee");
+			
+			//targetobject.transform(matrix);
 		},
 
 		handleMouseup: function(e){
@@ -207,6 +212,11 @@
 		 */
 		transform: function(matrix) {
 			Style.setTransform(this.play, matrix);
+			var css = Style.toCSS(matrix, FIXED);
+			if(targetobject != undefined)
+			{
+				//Style.setTransform(targetobject, matrix)
+			}
 		},
 
 		save: function() {
@@ -241,7 +251,9 @@
 		 */
 		render: function(matrix) {
 			var css = Style.toCSS(matrix, FIXED);
-			this.out.innerHTML = css;
+			//this.out.innerHTML = css;
+			
+			//$(editedobject).css("-webkit-transform", css);
 		},
 
 		/**
@@ -458,6 +470,7 @@
 				}
 				
 				this.set(node, csstransform, value);
+
 			},
 			
 			// not used
@@ -474,6 +487,7 @@
 				} : 
 
 				function(node, property, value) {
+					console.log("NODE: "+node);
 					node.style.setProperty(property, value, PRIORITY);
 				},
 
@@ -502,14 +516,17 @@
 				cleaned[4] += 'px';
 				cleaned[5] += 'px';				
 				var moz = cleaned.join(',');
-				
-				return [
+				console.log("toCSS called");
+				console.log("editedobject" +$(editedobject)+" css "+css);
+				$(editedobject).css("-webkit-transform", "matrix(" + css + ")");
+				return 'matrix(' + css + ');'
+				/*return [
 					'-webkit-transform: matrix(' + css + ');',
 					'-moz-transform: matrix(' + moz + ');',
 					'-ms-transform: matrix(' + css + ');',
 					'-o-transform: matrix(' + css + ');',
 					'transform: matrix(' + css + ');'
-				].join('\n');
+				].join('\n');*/
 			}
 		};
 

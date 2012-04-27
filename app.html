@@ -3,6 +3,8 @@
     <meta charset="utf-8" />
     <title>impressionist - v 0.0.1.0</title>
     <link href="css/mainstyle.css" rel="stylesheet" />
+   <link href="css/matrices.css" rel="stylesheet" />
+
     <link href="colorpicker/css/colorpicker.css" rel="stylesheet" />
    <link href="colorpicker/css/layout.css" rel="stylesheet" />
     <link href="scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -21,7 +23,7 @@
 
   
   <script src="scripts/jquery.js"></script>
-  <script src="scripts/matrices.js"></script>
+  
 
   <script src="scripts/datastore.js"></script>
   <script src="scripts/appui.js"></script>
@@ -31,6 +33,7 @@
   <script src="scripts/knobdial.js"></script>
   <script src="scripts/main.js"></script>
   <script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+  <script src="scripts/matrices.js"></script>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
   <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-button.js"></script>
@@ -120,10 +123,67 @@
        <li>
         <div class="btn-group" id="typeRadio">
         <a id="textBtn"  class="btn btn-info btn-small" href="#" onclick="setObjectType('text')"><i class="icon-text-width" ></i>&nbsp;  Text</a>
-        <a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>
+        <a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>     
+      <li>&nbsp; &nbsp; &nbsp;</li>     
+     
+            <li>
+            <div class="btn-group">
+        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
+        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
+      </div>
+    </li>
+     <li class="divider-vertical"></li>
+
+  <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="fontsizedropdown">
+                <!--<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>-->
+                <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
+                <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
+                <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Paragraph</a></li>
+                <li><a href="#">Custom</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-toggle="dropdown" data-target="fonttypedropdown" id="fontdropdown"> Select Font &nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu" id="fonttypedropdown">
+                <li class="shadedanchor"><a>Sans Serif Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Inika')">Inika</a></li>
+                <li><a href="#" onclick="setFont('Fresca')">Fresca</a></li>
+                <li><a href="#" onclick="setFont('Doppio One')">Doppio One</a></li>
+                <li><a href="#" onclick="setFont('Montserrat')">Montserrat</a></li>
+                <li><a href="#" onclick="setFont('Bevan')">Bevan</a></li>
+                <li class="divider"></li>
+                <li class="shadedanchor"><a>Decorative Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Walter Turncoat')">Walter Turncoat</a></li>
+                <li><a href="#" onclick="setFont('Henny Penny')">Henny Penny</a></li>
+                <li><a href="#" onclick="setFont('Ribeye Marrow')">Ribeye Marrow</a></li>
+                <li><a href="#" onclick="setFont('Unkempt')">Unkempt</a></li>
+              </ul>
+            </div>
+            </li>
+            <li class="divider-vertical"></li>
+        <li><div id="colorSelector"></div></li>
+        <li class="divider-vertical"></li>
+        <!--<li><a><strong>Skew X</strong></a></li>
+         <li><input id="knobit1" style="visiblility:hidden" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+
+      </li>
+      <li><a><strong>Skew Y</strong></a></li>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/></li>-->
+           <canvas id="mask">
+
+          </canvas>
+      
         </div>
       </li>
-    </ul>
+
     <!-- 
       <li class="divider-vertical"></li>
             <li>
@@ -275,8 +335,9 @@
     
    </div>
    <div class="presentationarea" id="drawingboard">
-     
-      <a href="#" id="deleteBtn" class="deleteicon" style="z-index:10; left:-20000px" onclick="deleteObject()">x</a>
+   
+      <a href="#" id="deleteBtn" class="deleteicon" style="z-index:40; left:-20000px" onclick="deleteObject()">x</a>
+
    </div>
   <input id="editorBox" style="z-index:3000; left:-20000px" />
    <div class="orchestration" id="orchestrationarea">
@@ -366,69 +427,18 @@
           <a href="#" id="rightarrow" onclick="movePageRight(event)"><img src="pics/rightarrow.png" style="width:48px; height:48px"></img></a>
     
     
-       <div id="contextbar" class="navbar">
-             
-            <ul class="nav">
      
-      <li>&nbsp; &nbsp; &nbsp;</li>     
-     
-            <li>
-            <div class="btn-group">
-        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
-        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
-      </div>
-    </li>
-     <li class="divider-vertical"></li>
+          <span id="play">
+            <span class="rotate label label-info" id="spanrotate">rotate</span>
+            <!--<span class="scale">scale</span>-->
+            <span class="skewx label label-info" id="spanskewx">skewx</span>
+            <span class="skewy label label-info" id="spanskewy">skewy</span>
 
-  <li class="dropdown">
-              <div class="btn-group">
-              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
-              <ul class="dropdown-menu" id="fontsizedropdown">
-                <!--<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>-->
-                <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
-                <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
-                <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Paragraph</a></li>
-                <li><a href="#">Custom</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <div class="btn-group">
-              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-toggle="dropdown" data-target="fonttypedropdown" id="fontdropdown"> Select Font &nbsp;<span class="caret"></span></a>
-              <ul class="dropdown-menu" id="fonttypedropdown">
-                <li class="shadedanchor"><a>Sans Serif Fonts</a></li>
-                <li class="divider"></li>
-                <li><a href="#" onclick="setFont('Inika')">Inika</a></li>
-                <li><a href="#" onclick="setFont('Fresca')">Fresca</a></li>
-                <li><a href="#" onclick="setFont('Doppio One')">Doppio One</a></li>
-                <li><a href="#" onclick="setFont('Montserrat')">Montserrat</a></li>
-                <li><a href="#" onclick="setFont('Bevan')">Bevan</a></li>
-                <li class="divider"></li>
-                <li class="shadedanchor"><a>Decorative Fonts</a></li>
-                <li class="divider"></li>
-                <li><a href="#" onclick="setFont('Walter Turncoat')">Walter Turncoat</a></li>
-                <li><a href="#" onclick="setFont('Henny Penny')">Henny Penny</a></li>
-                <li><a href="#" onclick="setFont('Ribeye Marrow')">Ribeye Marrow</a></li>
-                <li><a href="#" onclick="setFont('Unkempt')">Unkempt</a></li>
-              </ul>
-            </div>
-            </li>
-            <li class="divider-vertical"></li>
-        <li><div id="colorSelector"></div></li>
-        <li class="divider-vertical"></li>
-        <li><a><strong>Skew X</strong></a></li>
-         <li><input id="knobit1" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
-
-      </li>
-      <li><a><strong>Skew Y</strong></a></li>
-         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/></li>
-           <canvas id="mask">
-
-          </canvas>
-      </div>
+           <!-- <span class="move">move</span>-->
+      </span>
      <a href="#" class="btn btn-info" onmousemove="onSkewStart()">Skew</a>
-
+ <div id="contextbar">
+    </div>
     <div id="footerbar">
      </div>
 
