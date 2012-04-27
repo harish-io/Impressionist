@@ -27,6 +27,7 @@ CREDITS
 
 Impressionist leverages the following libraries:
 
+* Name for the project courtesy Anirudh Sasikumar (@anirudhs)
 * Bartek Szopka's Impress.js (https://github.com/bartaz/impress.js/)
 * Twitter's Bootstrap (http://twitter.github.com/bootstrap/)
 * jQuery & jQuery UI (http://jquery.com)
