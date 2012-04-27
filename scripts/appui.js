@@ -178,6 +178,7 @@ function setFontStyle(value)
 {
 	var dropdownlabel = "";
 	fontStyle = value;
+
 	if(fontStyle == "jumbo")
 	{
 		dropdownlabel = "Very Large"
@@ -201,7 +202,9 @@ function setFontStyle(value)
 			$(editedobject)
 				.attr("data-font-size", value)
 				.attr("class","ui-draggable slideobject itemselected "+value)
+
 		);
+		$("#play").css("visibility", "hidden");
 	}
 	$("#fontstyledropdown").html(dropdownlabel+'<b class="caret">');
 }
@@ -210,6 +213,7 @@ function setFont(font)
 	selectedFont = font;
 	currentSelectedFont = font;
 	$(editedobject).attr("data-font-face", currentSelectedFont)
+	$("#play").css("visibility", "hidden");
 	$("#fontdropdown").html(currentSelectedFont+'<b class="caret">');
 	if(editedobject != "")
 	{
