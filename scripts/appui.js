@@ -262,6 +262,7 @@ function deleteObject()
 		$(editedobject).remove();
 		$("#deleteBtn").css("left", -30000)
 		$("#contextbar").css("visibility", "hidden");
+		$("#play").css("visibility", "hidden");
 	}
 }
 function removeItemFromObjectMap(index)
