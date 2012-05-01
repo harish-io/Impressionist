@@ -78,7 +78,7 @@ var wxmax = 1600;
 //Window x min
 var wxmin = 0;
 //Window y max
-var wymax = 600;
+var wymax = 550;
 //Window y min
 var wymin = 0;
 
