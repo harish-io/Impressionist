@@ -13,6 +13,7 @@
  */
  //********************************//
 
+var editedobjectchanged = false;
 //Slide counter
 var totalSlides = 0;
 //Array to hold the slides
@@ -569,6 +570,8 @@ function doObjectSelection(event)
 	console.log("fontStyle "+fontStyle);
 	//event.preventDefault();
 	toggleToolbarControls(true);
+	$("#deleteBtn").css("visibility", "visible")
+
 	$("#play").css("visibility", "visible");
 	$("#deleteBtn").css("opacity", 0)
 	$("#contextbar").css("visibility", "visible");
@@ -576,12 +579,19 @@ function doObjectSelection(event)
 	var prevFont;
 	if("#"+event.target.id != editedobject)
 	{
+		console.log("Inside eo change");
 			//$(editedobject).text($("#editorBox").val());
 		    $(editedobject).removeClass("itemselected");
 		    prevFont = $(editedobject).css("font-family");
+		    //$("#"+event.target.id).css("-webkit-transform","matrix(1,0,0,1,0,0)");
 			//itemSelected = false;
+			editedobjectchanged = true;
 			currentAddObject =""
 			//hideEditorBox();
+	}
+	else
+	{
+		editedobjectchanged = false;
 	}
 	editedobject = "#"+event.target.id;
 	var x = parseInt($(editedobject).css("left").split("px")[0]);
@@ -593,6 +603,7 @@ function doObjectSelection(event)
 	$("#play").css("width", w)
 	$("#play").css("height", h)
 	var wt = $(editedobject).css("-webkit-transform");
+	console.log("WTEEE "+wt)
 	$("#play").css("-webkit-transform",wt);
 	console.log("prev font "+currentSelectedFont);
 	$(editedobject).css("z-index", 20)
@@ -615,6 +626,7 @@ function doObjectSelection(event)
 	if(!itemSelected)
 	{
 			$(editedobject).addClass("itemselected");
+			//$(editedobject).css("-webkit-transform",$("#play").css("-webkit-transform"));
 			itemSelected = true;
 			$("#deleteBtn").css("left", $(editedobject).css("left"));
 			$("#deleteBtn").css("top", $(editedobject).css("top"));
@@ -715,9 +727,11 @@ function triggerObjectAdd(event)
 						   cursor:"pointer"
 						}
 					 );
+				$("#____object"+objectcounter).css("-webkit-transform","matrix(1,0,0,1,0,0)")
 				if(editedobject!="")
 				{
 					$(editedobject).removeClass("itemselected");
+					//$(editedobject).css("-webkit-transform","matrix(1,0,0,1,0,0)");
 					itemSelected = false;
 					$("#deleteBtn").css("opacity", 0)
 					currentAddObject = "";
@@ -726,6 +740,7 @@ function triggerObjectAdd(event)
 				}
 				editedobject = ("#____object"+objectcounter);
 				$(editedobject).css("font-family", selectedFont);
+				//$(editedobject).css("-webkit-transform","matrix(1,0,0,1,0,0)");
 			objectcounter++;
 			}
 	}
@@ -1256,7 +1271,7 @@ function doExport()
 		}
 		var x = slide.css("left").split("px")[0];
 		var y = slide.css("top").split("px")[0];
-		var o =calculateCoords(x - 300, y);
+		var o =calculateCoords(x - 300, y + 1000);
 		$("#data_x_p_"+slidesArray[i].id).text("x = "+o.x);
 		$("#data_y_p_"+slidesArray[i].id).text("y = "+o.y);
 		$("#data_z_p_"+slidesArray[i].id).text("z "+depth+" | scale "+scale);

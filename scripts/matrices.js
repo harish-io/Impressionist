@@ -11,6 +11,7 @@
 	// decimals of the matrix css output
 	var FIXED = 3; 
 	var targetobject;
+	var currentobject;
 	/**
 	 * Various helpers
 	 *
@@ -98,6 +99,20 @@
 		 */
 		handleMousedown: function(e){
 			//e.preventDefault();
+			//console.log("editedobjectchanged "+editedobjectchanged)
+			console.log("------- " +$(editedobject).attr("id"));
+			$("#deleteBtn").css("visibility", "hidden")
+			if($(editedobject).attr("id") != currentobject)
+			{
+				this.display = new Matrix();
+
+				// temp transformation during move, added to display on release
+				this.current = new Matrix();
+				currentobject = $(editedobject).attr("id");
+			}
+			
+				
+				//editedobjectchanged = false;
 			
 			// jquery wraps the native event, need it for e.touches though
 			var ev = this.getTouch(e);
@@ -516,9 +531,22 @@
 				cleaned[4] += 'px';
 				cleaned[5] += 'px';				
 				var moz = cleaned.join(',');
-				console.log("toCSS called");
-				console.log("editedobject" +$(editedobject)+" css "+css);
-				$(editedobject).css("-webkit-transform", "matrix(" + css + ")");
+				console.log("toCSS called ");
+				var mat = $("#play").css("-webkit-transform");
+				if(mat == "matrix(1, 0, 0, 1, 0, 0)")
+				{
+					console.log("Do none "+mat);
+				}
+				else
+				{
+					console.log("Do Setting "+mat);
+
+				}
+				$(editedobject).css("-webkit-transform", mat);
+				$(editedobject).css("transform-origin", "bottom:0px");
+				console.log("editedobject" +$(editedobject).attr("id")+" css "+css);
+
+				
 				return 'matrix(' + css + ');'
 				/*return [
 					'-webkit-transform: matrix(' + css + ');',
