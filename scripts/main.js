@@ -142,6 +142,7 @@ function init()
 	$(document).bind("mouseup", onDocMouseUp);
 	//$("#mask").css("visibility", "visible")
 	$("#play").css("visibility","hidden")
+	$("#deleteBtn").css("visibility", "hidden");
 	setupUI();
 	setupKnobs();
 	setupColorPicker();
@@ -149,8 +150,19 @@ function init()
 	togglePaginator(false);
 	//checkForSavedPresentations();
 	setupClipboard();
+	attachKeymaster();
 	//$('.scroll-pane').jScrollPane();
 
+}
+function attachKeymaster()
+{
+	key('⌘+d, ctrl+d', 
+		function()
+		{ 
+			//alert('stopped reload!'); 
+			deleteObject();
+			return false ;
+		});
 }
 function togglePaginator(bool)
 {
@@ -570,7 +582,7 @@ function doObjectSelection(event)
 	console.log("fontStyle "+fontStyle);
 	//event.preventDefault();
 	toggleToolbarControls(true);
-	$("#deleteBtn").css("visibility", "visible")
+	//$("#deleteBtn").css("visibility", "visible")
 
 	$("#play").css("visibility", "visible");
 	$("#deleteBtn").css("opacity", 0)
