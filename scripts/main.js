@@ -390,6 +390,7 @@ function onDocumentKeyUp(event)
 }
 function moveLeft()
 {
+	$("#play").css("visibility", "hidden");
 	if(editedobject != "")
 	{
 		var l = parseInt($(editedobject).css("left").split("px")[0]);
@@ -406,10 +407,14 @@ function moveLeft()
 		}
 		//$(editedobject).css("left", l);
 		positionDeleteButton();
+		positionSkewControls();
+
 	}
 }
 function moveRight()
 {
+	$("#play").css("visibility", "hidden");
+
 	if(editedobject != "")
 	{
 		var l = parseInt($(editedobject).css("left").split("px")[0]);
@@ -427,12 +432,16 @@ function moveRight()
 		}
 		
 		positionDeleteButton();
+		positionSkewControls();
+
 
 		
 	}
 }
 function moveUp()
 {
+	$("#play").css("visibility", "hidden");
+
 	if(editedobject != "")
 	{
 		var l = parseInt($(editedobject).css("left").split("px")[0]);
@@ -451,11 +460,15 @@ function moveUp()
 		}
 		
 		positionDeleteButton();
+		positionSkewControls();
+
 
 	}
 }
 function moveDown()
 {
+	$("#play").css("visibility", "hidden");
+
 	if(editedobject != "")
 	{
 		var l = parseInt($(editedobject).css("left").split("px")[0]);
@@ -473,6 +486,7 @@ function moveDown()
 
 		}
 		positionDeleteButton();
+		positionSkewControls();
 	}
 }
 
@@ -618,6 +632,20 @@ function doObjectSelection(event)
 	}
 	//setupColorPicker((editedobject).attr("data-selected-color"))
 	resetSkewValues();
+}
+function positionSkewControls()
+{
+	var x = parseInt($(editedobject).css("left").split("px")[0]);
+	var y = parseInt($(editedobject).css("top").split("px")[0]);
+	var w = $(editedobject).width()
+	var h = parseInt($(editedobject).css("height").split("px")[0]);
+	$("#play").css("left",x + 300)
+	$("#play").css("top", y + 220);
+	$("#play").css("width", w)
+	$("#play").css("height", h)
+	var wt = $(editedobject).css("-webkit-transform");
+	$("#play").css("-webkit-transform",wt);
+	$("#play").css("visibility", "visible");
 }
 function resetSkewValues()
 {
