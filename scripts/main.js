@@ -1283,7 +1283,7 @@ function doExport()
 		}
 		var x = slide.css("left").split("px")[0];
 		var y = slide.css("top").split("px")[0];
-		var o =calculateCoords(x - 300, y + 1000);
+		var o =calculateCoords(x - 300, y);
 		$("#data_x_p_"+slidesArray[i].id).text("x = "+o.x);
 		$("#data_y_p_"+slidesArray[i].id).text("y = "+o.y);
 		$("#data_z_p_"+slidesArray[i].id).text("z "+depth+" | scale "+scale);
