@@ -147,6 +147,7 @@ function setupColorPicker(color)
 		 {
 		 	$(editedobject).css("z-index", 0)
 		 	$("#deleteBtn").css("z-index", 0)
+		 	//this.css("z-index", 200)
 
 		 	if(!isdisabled)
 		 	{
@@ -156,8 +157,9 @@ function setupColorPicker(color)
 		},
 		onHide: function (colpkr) 
 		{
-			$(editedobject).css("z-index", 20)
+			//$(editedobject).css("z-index", 20)
 			$("#deleteBtn").css("z-index", 40)
+			//this.css("z-index", 0)
 			$(colpkr).fadeOut(500);
 			return false;
 		},
