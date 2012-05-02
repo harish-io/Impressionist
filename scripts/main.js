@@ -78,7 +78,7 @@ var wxmax = 1600;
 //Window x min
 var wxmin = 0;
 //Window y max
-var wymax = 550;
+var wymax = 650;
 //Window y min
 var wymin = 0;
 
@@ -87,7 +87,7 @@ var o_vxmax = 120;
 //Viewport x min
 var o_vxmin = 0;
 //Viewport y max
-var o_vymax = 85;
+var o_vymax = 90;
 //Viewport y min
 var o_vymin = 0;
 //Window x max
@@ -95,7 +95,7 @@ var o_wxmax = 1000;
 //Window x min
 var o_wxmin = 0;
 //Window y max
-var o_wymax = 500;
+var o_wymax = 600;
 //Window y min
 var o_wymin = 0;
 //toggle add object button click state.
@@ -584,7 +584,8 @@ function doObjectSelection(event)
 	toggleToolbarControls(true);
 	//$("#deleteBtn").css("visibility", "visible")
 
-	$("#play").css("visibility", "visible");
+	$("#play").css("visibility", "hidden");
+	//$("#play").css("z-index", 0);
 	$("#deleteBtn").css("opacity", 0)
 	$("#contextbar").css("visibility", "visible");
 
@@ -727,6 +728,9 @@ function triggerObjectAdd(event)
 				objectmap.push({index:objectcounter});
 				console.log("Object id "+"#____object"+objectcounter)
 				var obj = calculateOrchCoords(event.offsetX, event.offsetY);
+				var offsetx = event.offsetX;
+				var offsety = event.offsetY;
+
 				$("#____object"+objectcounter).css("left", event.offsetX);
 				$("#____object"+objectcounter).css("top", event.offsetY);
 				$("#____object"+objectcounter).css("font-family", currentSelectedFont);
@@ -796,6 +800,7 @@ function onMouseUp(event)
 	$("#play").css("top", y + 220);
 	$("#play").css("width", w)
 	$("#play").css("height", h)
+	//$("#play").css("z-index", 30)
 	
 }
 function adjustObjectPositions(item)
@@ -1358,13 +1363,31 @@ function reAdjustChildCoords()
 				//adjust skew y
 				var skewy = stubobject.attr("data-skewy")
 				var skewx = stubobject.attr("data-skewx")
+				var fontsize = stubobject.attr("data-font-size")
+				var tdrotate = stubobject.attr("transform-data-rotate")
 
-
-				l = l - 600;
-				t = t - 300;
+				l = l- (screen.width/2)
+				t = t - (screen.height/2) + 100
+				console.log("l "+l+ "  "+screen.width/2)
+				if(fontsize == "mediumheader")
+				{
+					t += (stubobject).height() 
+					//l += 50;
+				}
+				if(tdrotate !=0 && tdrotate != 180 && tdrotate != undefined)
+				{
+					var factor = 0;
+					console.log("Recalc for rot")
+					if(tdrotate == 90|| tdrotate == -90)
+					{
+						factor = stubobject.height()/2;
+					}
+					l = Math.round(l - ((tdrotate * stubobject.width()/2)/90))
+					t = Math.round(t - ((tdrotate * stubobject.width()/2)/90)) + 100 ;
+				}
 				if(skewy != undefined)
 				{
-					t = t - 60;
+					t = t - 160;
 				} 
 				if(skewx != undefined)
 				{

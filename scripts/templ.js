@@ -26,12 +26,12 @@ var templatearray =
 						 "<script src='scripts/jquery.js'></script>",
 						 "</head>",
 						 "<body class='impress-not-supported'>",
-						 "<div id='impress'>",
+						 "<div id='impress' style='background-color:#FFCC00;'>",
 						 "<div></div>",
 						 "!____PLACEHOLDER____!",
 						 "</div>",
 						 "<script src='scripts/impress.js'></script>",
-                                                 "<script>impress().init();</script>",
+                         "<script>impress().init();</script>",
 						 "</body>",
 						 "</html>"
 					];

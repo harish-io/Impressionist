@@ -4,16 +4,16 @@
 }
 .mediumheader
 {
-	width:900px;
-	font-size:120%;
-	line-height:40px;
+	font-size:75%;
+	line-height:60px;
+	white-space: nowrap;
 }
 .largeheader
 {
-	font-size:200%;
+	font-size:150%;
 	cursor:pointer;
-	width:1200px;
 	line-height:100px;
+	white-space: nowrap;
 }
 .jumbo
 {
@@ -33,4 +33,9 @@
 	width:100%;
 	height:100%;
 	/**/
+}
+#impress
+{
+	background-color: #FFCC00;
+	border: 1px solid #999;
 }

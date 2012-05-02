@@ -165,6 +165,7 @@
 					var y = moved.y;
 					var x = point.subtract(center).x;
 					var r = Math.atan2(y, x);
+					$(editedobject).attr("transform-data-rotate", r);
 					matrix = matrix.rotate(r);
 				break;
 
@@ -543,10 +544,20 @@
 
 				}
 				$(editedobject).css("-webkit-transform", mat);
-				$(editedobject).css("transform-origin", "bottom:0px");
-				console.log("editedobject" +$(editedobject).attr("id")+" css "+css);
+				$(editedobject).css("-webkit-transform-origin", "0px,0px");
+				var tr = mat;
+				var values = tr.split('(')[1];
+    			values = values.split(')')[0];
+    			values = values.split(',');
+				var a = values[0];
+				var b = values[1];
+				var c = values[2];
+				var d = values[3];
+				var angle =  Math.round(Math.atan2(b, a) * (180/Math.PI));
+				$(editedobject).attr("transform-data-rotate", angle)
 
-				
+				console.log("editedobject" +$(editedobject).attr("transform-data-rotate"));
+
 				return 'matrix(' + css + ');'
 				/*return [
 					'-webkit-transform: matrix(' + css + ');',
