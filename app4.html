@@ -19,7 +19,6 @@
     <link href='http://fonts.googleapis.com/css?family=Unkempt' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Armata' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 
 
   
@@ -42,8 +41,6 @@
   <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-dropdown.js"></script>
   <script type="text/javascript" src=" scripts/bootstrap/js/bootstrap-button.js"></script>
   <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-modal.js"></script>
-  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-  
     <script>
     $(document).ready(function(e)
     {
@@ -75,53 +72,26 @@
 </script>
   </head>
   <body id="mybody">
-   <div class="navbar headerbg" id="topnavbar">
-    <div>
-      <div class="container" style="width: auto;">
+   <div class="navbar btn-info" id="topnavbar">
+    <div class="btn-info">
+      <div class="container btn-info" style="width: auto;">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar">Hello</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <img src="pics/poocha.png" class="logopic">
-        <a class="brand" href="#" id="brandlogo">impressionist <sup id="smallsup">0.1</sup></a>
+        <a class="brand" href="#" id="brandlogo">impressionist <sup id="smallsup">alpha3</sup></a>
         <div class="nav-collapse">
           <ul class="nav">
-          <li>
-                                  <div  id="typeRadio">
-                                     <a id="newBtn" rel="tooltip" title="first tooltip"  class="btn  btn-small" href="#" onclick="saveAndCreate()"><i class="icon-plus" ></i>&nbsp;  </a>
-                                      <a id="openBtn"   class="btn  btn-small" href="#" data-toggle="modal" onclick="checkForSavedPresentations()"><i class="icon-folder-open " ></i> &nbsp; </a> 
-                                       <a id="saveBtn"   class="btn  btn-small" href="#" data-toggle="modal" onclick="doSave()"><i class="icon-ok " ></i> &nbsp; </a> 
+            <li>
+                                  <div class="btn-group" id="typeRadio">
+                                     <a id="newBtn"  class="btn btn-inverse btn-small" href="#" onclick="saveAndCreate()"><i class="icon-plus icon-white" ></i>&nbsp;  New</a>
+                                      <a id="openBtn"   class="btn btn-inverse btn-small" href="#" data-toggle="modal" onclick="checkForSavedPresentations()"><i class="icon-folder-open icon-white" ></i> &nbsp; Open</a> 
+                                       <a id="saveBtn"   class="btn btn-inverse btn-small" href="#" data-toggle="modal" onclick="doSave()"><i class="icon-ok icon-white" ></i> &nbsp; Save</a> 
                                   </div>
-                                  
 
             </li>
-          </ul>
-             <ul class="nav pull-right">
-             
-               <li class="dropdown" id="viewchangedropdown1">
-                 <div class="btn-group">
-                    <a href="#" onclick="toggleDisplayView()" id="rightBtn" class=" btn btn-small btn-inverse">Orchestration View</span></a>
-                  </div>
-              </li>
-              <li>&nbsp;&nbsp;&nbsp;</li>
-            </ul>
-          </div>
-        </div><!-- /.nav-collapse -->
-      </div>
-    </div><!-- /navbar-inner -->
-  </div><!-- /navbar -->
-   <div class="navbar subnavbg" id="subnav">
-      <div class="container" style="width: auto;">
-         <ul class="nav">
-          <li>&nbsp;&nbsp;</li>
-     <li>
-                      <div class="btn-group">
-                                     <a class="btn btn-warning btn-small" onclick="addSlide()" href="#"><i class="icon-plus-sign icon-white" ></i>&nbsp;Add Slide</a>
-                       </div>
-
-            </li>
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li>&nbsp</li>
            
              <li>
                     <div class="btn-group" id="typeRadio">
@@ -180,21 +150,168 @@
         <li>&nbsp;</li>
 
           </li>
-  
+          </ul>
+             <ul class="nav pull-right">
+               <li class="dropdown" id="viewchangedropdown1">
+                 <div class="btn-group">
+                    <a href="#" onclick="toggleDisplayView()" id="rightBtn" class=" btn btn-small btn-inverse">Orchestration View</span></a>
+                  </div>
+              </li>
+              <li>&nbsp;&nbsp;&nbsp;</li>
+            </ul>
+          </div>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div><!-- /navbar -->
+   <div class="navbar" id="subnav">
+    <div class="navbar-inner">
+      <div class="container" style="width: auto;">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="nav-collapse">
+         <ul class="nav">
+      <li>
+        <div class="btn-group">
+          <a class="btn btn-warning btn-small" onclick="addSlide()" href="#"><i class="icon-plus-sign" ></i>  New Slide     </a>
+        </div>
+      </li>  
+      <li>&nbsp; &nbsp; &nbsp;</li>     
+       <li class="divider-vertical"></li>
+       <li>
+        <div class="btn-group" id="typeRadio">
+        <a id="textBtn"  class="btn btn-info btn-small" href="#" onclick="setObjectType('text')"><i class="icon-text-width" ></i>&nbsp;  Text</a>
+        <a id="picBtn"   class="btn btn-info btn-small" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-picture" ></i> &nbsp; Picture</a>     
+      <li>&nbsp; &nbsp; &nbsp;</li>     
+     
+            <li>
+            <div class="btn-group">
+        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
+        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
+      </div>
+    </li>
+     <li class="divider-vertical"></li>
+
+  <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="fontsizedropdown">
+                <!--<li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>-->
+                <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
+                <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
+                <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Paragraph</a></li>
+                <li><a href="#">Custom</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-toggle="dropdown" data-target="fonttypedropdown" id="fontdropdown"> Select Font &nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu" id="fonttypedropdown">
+                <li class="shadedanchor"><a>Sans Serif Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Inika')">Inika</a></li>
+                <li><a href="#" onclick="setFont('Fresca')">Fresca</a></li>
+                <li><a href="#" onclick="setFont('Doppio One')">Doppio One</a></li>
+                <li><a href="#" onclick="setFont('Montserrat')">Montserrat</a></li>
+                <li><a href="#" onclick="setFont('Bevan')">Bevan</a></li>
+                <li class="divider"></li>
+                <li class="shadedanchor"><a>Decorative Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Walter Turncoat')">Walter Turncoat</a></li>
+                <li><a href="#" onclick="setFont('Henny Penny')">Henny Penny</a></li>
+                <li><a href="#" onclick="setFont('Ribeye Marrow')">Ribeye Marrow</a></li>
+                <li><a href="#" onclick="setFont('Unkempt')">Unkempt</a></li>
+              </ul>
+            </div>
+            </li>
+            <li class="divider-vertical"></li>
+        <li><div id="colorSelector"></div></li>
+        <li class="divider-vertical"></li>
+        <!--<li><a><strong>Skew X</strong></a></li>
+         <li><input id="knobit1" style="visiblility:hidden" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+
+      </li>
+      <li><a><strong>Skew Y</strong></a></li>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/></li>-->
            <canvas id="mask">
 
           </canvas>
       
         </div>
       </li>
+
+    <!-- 
+      <li class="divider-vertical"></li>
+            <li>
+            <div class="btn-group">
+        <Button class="btn btn-info btn-small" id="boldBtn" href="#" onclick="toggleBold()"><i class="icon-bold"></i></Button>
+        <Button class="btn btn-info btn-small" href="#" onclick="toggleItalic()"><i class="icon-italic"></i></Button>
+      </div>
+    </li>
+     <li class="divider-vertical"></li>
+    
+
+
+  <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-target="fontsizedropdown" data-toggle="dropdown" id="fontstyledropdown"> Select Font Size <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="fontsizedropdown">
+                <li><a href="#" onclick="setFontStyle('jumbo')">Very Large</a></li>
+                <li><a href="#" onclick="setFontStyle('largeheader')">Large</a></li>
+                <li><a href="#" onclick="setFontStyle('mediumheader')">Medium</a></li>
+                <li><a href="#" onclick="setFontStyle('smallheader')">Small</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Paragraph</a></li>
+                <li><a href="#">Custom</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <div class="btn-group">
+              <a href="#" class="btn btn-small btn-inverse dropdown-toggle" data-toggle="dropdown" data-target="fonttypedropdown" id="fontdropdown"> Select Font &nbsp;<span class="caret"></span></a>
+              <ul class="dropdown-menu" id="fonttypedropdown">
+                <li class="shadedanchor"><a>Sans Serif Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Inika')">Inika</a></li>
+                <li><a href="#" onclick="setFont('Fresca')">Fresca</a></li>
+                <li><a href="#" onclick="setFont('Doppio One')">Doppio One</a></li>
+                <li><a href="#" onclick="setFont('Montserrat')">Montserrat</a></li>
+                <li><a href="#" onclick="setFont('Bevan')">Bevan</a></li>
+                <li class="divider"></li>
+                <li class="shadedanchor"><a>Decorative Fonts</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="setFont('Henny Penny')">Henny Penny</a></li>
+                <li><a href="#" onclick="setFont('Ribeye Marrow')">Ribeye Marrow</a></li>
+                <li><a href="#" onclick="setFont('Unkempt')">Unkempt</a></li>
+              </ul>
+            </div>
+            </li>
+            <li class="divider-vertical"></li>
+        <li><div id="colorSelector"></div></li>
+        <li class="divider-vertical"></li>
+        <li><a><strong>Skew X</strong></a></li>
+         <li><input id="knobit1" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+
+      </li>
+      <li><a><strong>Skew Y</strong></a></li>
+         <li><input id="knobit2" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
+         
+      </li>
+          </ul>-->
           <ul class="nav pull-right">
-            
+            <li class="divider-vertical"></li>
 
           </ul>
         </div><!-- /.nav-collapse -->
       </div>
+    </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
-   <div class="navbar subnavbg" id="subnav2" style="background-color:#222">
+   <div class="navbar" id="subnav2">
+    <div class="navbar-inner">
       <div class="container" style="width: auto;">
         <div class="nav-collapse">
           <ul class="nav">
@@ -213,12 +330,12 @@
        <li>
         <input id="rotationyknob" class="knob" data-thickness=".3" data-width="38" data-min="-90" data-max="90"  data-cursor=true/>
       </li>
-      <li ></li>
+      <li class="divider-vertical"></li>
        <li><a>Slide Depth</a></li>
        <li>
         <input id="depthrange" type="range" min="0" max="5000" />
       </li>
-        <li ></li>
+        <li class="divider-vertical"></li>
        <li><a>Slide Scale</a></li>
        <li>
         <input id="scalerange" type="range" min="1" max="9" />
@@ -241,7 +358,7 @@
 
           <li>
         <div class="btn-group">
-          <a class="btn btn-small" onclick="preparePreview()" href="#"><i class="icon-play-circle" ></i>  Preview     </a>
+          <a class="btn btn-info btn-small" onclick="preparePreview()" href="#"><i class="icon-play-circle" ></i>  Preview     </a>
         </div>
       </li>  
         <li>&nbsp; &nbsp; </li>
@@ -256,6 +373,7 @@
           </ul>
         </div><!-- /.nav-collapse -->
       </div>
+    </div><!-- /navbar-inner -->
   </div><!-- /navbar -->
   <div class="container1">
    <div class="slideholder" id="slidethumbnailholder">
@@ -363,10 +481,10 @@
 
            <!-- <span class="move">move</span>-->
       </span>
+     <a href="#" class="btn btn-info" onmousemove="onSkewStart()">Skew</a>
  <div id="contextbar">
     </div>
-    <div id="footerbar" class="navbar">
-     
+    <div id="footerbar">
      </div>
 
      

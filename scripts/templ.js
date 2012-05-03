@@ -37,7 +37,7 @@ var templatearray =
 					];
 
 var largetext = "<h3 class='!OBJECT_SIZE! slideobject' id='!ID!' data-font-size='largeheader' data-font-face='Inika' data-selected-color='#000000'>This is sample text</h3>";
-var orchtemplate = "<div class='orchestrationthumbnail' id='!SLIDE_ID!'><div id='!THUMBCONTID!'></div><span id='!XP!'class='label label-warning xspan'></span><span id='!YP!' class='label label-warning vspan'></span><p id='!SLIDENUMBER!' class='slidethumbnailnumberorch'>!COUNT!</p><div class='subbottombar'><a class='whitepabs' id='!OROT!'>!ROTTEXT!<sup>o</sup></a></div><div class='bottombar'><a class='whitep' id='!ZP!'>!DEPTH!</a><br/><a class='whitep' ></a></div></div>";
+var orchtemplate = "<div class='orchestrationthumbnail' id='!SLIDE_ID!'><div id='!THUMBCONTID!'></div><span id='!XP!'class='label label-info xspan'></span><span id='!YP!' class='label label-info vspan'></span><p id='!SLIDENUMBER!' class='slidethumbnailnumberorch'>!COUNT!</p><div class='subbottombar'><a class='blackp' id='!OROT!'>!ROTTEXT!<sup>o</sup></a></div><div class='bottombar'><a class='whitep' id='!ZP!'>!DEPTH!</a><br/><a class='whitep' ></a></div></div>";
 var slidethumbtemplate = "<div class='slidethumbnail' id='!SLIDE_ID!'><p class='slidethumbnailnumber' id='!THUMBDISPLAYNUMBER!'>!COUNT!</p><p id='!THUMBDELETE!' class='thumbdeleteicon deletehide' onclick='deleteSlide()'>x</p></div>";
 var slidetemplate="<div class='mainslide step' id='!SLIDE_ID!'></div>";
 var pictemplate = "<img class='slideimage' id='!IMG_ID!' src='!IMG_SRC!'></img>";

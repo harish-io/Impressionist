@@ -13,6 +13,7 @@ var rotateX = 0;
 var rotateY = 0;
 var rotateZ = 0;
 var currentsliderotation = 0;
+var display = 0;
 //Set up UI
 function setupUI()
 {
@@ -609,4 +610,19 @@ function addOrchestrationThumbnailsFromStore(arr)
 
 	}
 
+}
+function toggleDisplayView()
+{
+	if(display == 1)
+	{
+		showPresentationView();
+		$("#rightBtn").text("Orchestration View")
+		display = 0;
+	}
+	else
+	{
+		showOrchestrationView();
+		$("#rightBtn").text("Presentation View")
+		display = 1;
+	}
 }
