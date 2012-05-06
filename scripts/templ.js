@@ -12,7 +12,7 @@
 var templatearray =
 					[
 
-						 "<html><head><title>Impressionist previewer - (by @hsivaram)</title>",
+						 "<html><head><meta charset='utf-8' /><title>Impressionist previewer - (by @hsivaram)</title>",
 						 "<link href='http://fonts.googleapis.com/css?family=Inika:400,700' rel='stylesheet' type='text/css'>",
 						 "<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'><link href='css/style.css' rel='stylesheet' />",
 						 "<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel=',stylesheet' type='text/css'>",
