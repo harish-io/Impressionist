@@ -116,6 +116,7 @@ h3, h4
     -webkit-box-shadow: 1px 1px 1px 1px rgba(150, 150, 150, 0.5);
 	-moz-box-shadow: 1px 1px 1px 1px rgba(150, 150, 150, 0.5);
 	box-shadow: 1px 1px 1px 1px rgba(150, 150, 150, 0.5);
+	
 
 
 }
@@ -156,6 +157,7 @@ h3, h4
 	vertical-align:middle;
 	margin-top:30px;
 	margin-left:45px;
+
 	/*font-family: 'Inika', serif;*/
 		font-family: 'Armata', sans-serif;
 	font-size:90%;

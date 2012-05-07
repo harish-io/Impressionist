@@ -17,7 +17,7 @@ var display = 0;
 //Set up UI
 function setupUI()
 {
-	console.log("Setup UI "+screen.width+"  "+screen.height);
+    console.log("Setup UI "+screen.width+"  "+screen.height);
 	$("#contextbar").css("visibility","hidden");
 	$("#subnav2").css("z-index", -10000);
 	$("#subnav").css("z-index", 10000);
@@ -588,6 +588,8 @@ function cloneElement()
 	objectmap.push({index:objectcounter});
 	objectcounter++;
 	removePrevSelection();
+	isMoving = false;
+	updateSlidePreview();
 
 }
 function addOrchestrationThumbnailsFromStore(arr)

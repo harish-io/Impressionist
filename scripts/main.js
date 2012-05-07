@@ -17,7 +17,7 @@ var editedobjectchanged = false;
 //Slide counter
 var totalSlides = 0;
 //Array to hold the slides
-var slidesArray = new Array();
+var slidesArray = [];
 //Objects (within the slide counter)
 var objectcounter = 0;
 //Current object type (text / image / video)
@@ -98,6 +98,9 @@ var o_wxmin = 0;
 var o_wymax = 600;
 //Window y min
 var o_wymin = 0;
+var isMoving = false;
+
+
 //toggle add object button click state.
 var addObjectFlag = false;
 
@@ -132,13 +135,14 @@ var orchpages = 0;
 var currentOrchPage = 0;
 var isOrchestration = false;
 var currentSelectedFont = "Inika";
+var currentselectedslidethumb = "";
 
 //startup
 //setup all the UI methods. Code in appui.js
 function init()
 {
 	//localStorage.clear();	
-
+	console.log("I am the correct file")
 	$(document).bind("mouseup", onDocMouseUp);
 	//$("#mask").css("visibility", "visible")
 	$("#play").css("visibility","hidden")
@@ -756,6 +760,9 @@ function triggerObjectAdd(event)
 				}
 				editedobject = ("#____object"+objectcounter);
 				$(editedobject).css("font-family", selectedFont);
+				console.log("Update previe call");
+				isMoving = false;
+				updateSlidePreview();
 				//$(editedobject).css("-webkit-transform","matrix(1,0,0,1,0,0)");
 			objectcounter++;
 			}
@@ -768,6 +775,62 @@ function triggerObjectAdd(event)
 
 	}
 
+}
+function updateSlidePreview()
+{
+			var l = $(editedobject).css("left").split("px")[0];
+			var t = $(editedobject).css("top").split("px")[0];
+			var o = calculateOrchCoords(l, t);
+
+			var object = $(editedobject);
+			console.log("Edited object in slide or" + $(editedobject).attr("id"));
+			var clonedobject;
+			var coords = o
+			if(!isMoving)
+			{
+				clonedobject = object.clone();
+				clonedobject.css("left", coords.x);
+				clonedobject.css("top", coords.y);
+				clonedobject.attr("id", "slide_thumbnailof_"+clonedobject.attr("id"));
+			}
+			else
+			{
+				clonedobject = $("#slide_thumbnailof_"+object.attr("id"));
+				clonedobject.css("left", coords.x);
+				clonedobject.css("top", coords.y);
+				console.log("-->"+clonedobject.attr("id"));
+			}
+			var clname = object.attr("class");
+			if(clonedobject.hasClass("itemselected"))
+			{
+					clonedobject.removeClass("itemselected");
+			}
+			if(clonedobject.attr("src")!=undefined)
+			{
+				clonedobject.css("width","12%");
+				clonedobject.css("height","12%");
+			}
+			if(clonedobject.hasClass("largeheader"))
+			{
+				
+				clonedobject.removeClass("largeheader");
+				clonedobject.css("font-size", 10);
+				clonedobject.css("position", "absolute");
+				//clonedobject.addClass("thumbnail_mediumheader");
+			}
+			else if(object.hasClass("mediumheader"))
+			{
+				clonedobject.css("font-size", 6);
+				clonedobject.css("position", "absolute");
+			}
+			else if(object.hasClass("smallheader"))
+			{
+				clonedobject.css("font-size", 4);
+				clonedobject.css("position", "absolute");
+			}
+			console.log("Slide thumb "+currentselectedslidethumb);
+			$(currentselectedslidethumb).append(clonedobject);
+			//$("#preview_"+input[i].id).append(clonedobject);
 }
 function onObjectDrag(event)
 {
@@ -782,6 +845,8 @@ function onObjectDrag(event)
 	{
 		item.css("top", 20)
 	}
+	isMoving = true;
+	updateSlidePreview();
 	$("#contextbar").css("visibility", "hidden");
 	$("#play").css("visibility", "hidden");
 
@@ -867,6 +932,7 @@ function onThumbnailClick(event)
 }
 function getCurrentSelectedSlide(item)
 {
+	currentselectedslidethumb = item;
 	var s = item.split("slidethumb")[1];
 	addTarget = "#____slide"+s;
 }
