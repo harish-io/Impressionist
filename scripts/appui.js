@@ -46,8 +46,11 @@ function onFocusOut(event)
 	var val = $("#editorBox").val();
 	if(val != "")
 	{
-		$(editedobject).text($("#editorBox").val());
+		var keyed = $("#editorBox").val().replace(/\n/g, '<br/>');
+		$(editedobject).html(keyed);
+		//$(editedobject).text(keyed);
 	}
+	$(editedobject).css("visibility", "visible");
 	hideEditorBox();
 	resetEditedObject();
 }

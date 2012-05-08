@@ -548,6 +548,7 @@ function onSlideMouseUp(event)
 	console.log("Mouse uping "+event.target.id);
 	if(target.length > 1)
 	{
+	
 		$("#contextbar").css("visibility", "hidden");
 		$("#play").css("visibility", "hidden");
 
@@ -976,33 +977,37 @@ function toastEditor(event)
 		var modifiedy = parseInt(y.split("px")[0])+78;
 		//editedobject = "#"+event.target.id;
 		//hideEditedObject();
-
+		$(editedobject).css("visibility", "hidden");
 
 		//$("#"+event.target.id).css("opacity", 0);
-		$("#editorBox").val($(editedobject).text())
+		var keyed = $(editedobject).html().split("<br>").join("\n");
+		console.log("Kyeded "+keyed);
+		$("#editorBox").val(keyed)
 		//$("#editorBox").attr("class", "largeeditor largeheader");
 		$("#editorBox").css("left", modifiedx);
 		$("#editorBox").css("top", modifiedy);
-		$("#editorBox").css("width", w);
-		$("#editorBox").css("font-family", "verdana");
-		$("#editorBox").css("font-size", "200%");
+		$("#editorBox").css("width", $(editedobject).width() + 20);
+		$("#editorBox").css("font-family", $(editedobject).css("font-family"));
+		$("#editorBox").css("font-size", $(editedobject).css("font-size"));
 		$("#editorBox").css("height", h);
 		$("#editorBox").focus();
 		
 	}
+	
 }
 function onKeyUp(event)
 {
 		if(event.keyCode == 13)
 		{
 			console.log("Enter key");
-			$(editedobject).text($("#editorBox").val());
+			 var keyed = $("#editorBox").val().replace(/\n/g, '<br/>');
+			$(editedobject).html(keyed);
 			
-			$("#editorBox").val("");
+			/*$("#editorBox").val("");
 			editorvisible = false
 			resetEditedObject();
 			positionDeleteButton()
-			hideEditorBox();	
+			hideEditorBox();*/
 			$("#play").css("visibility", "hidden")
 
 		}

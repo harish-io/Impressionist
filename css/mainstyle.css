@@ -229,14 +229,14 @@ h3, h4
 {
 	/*width:550px;*/
 	font-size:200%;
-	line-height:60px;
+	line-height:40px;
 	white-space: nowrap;
 }
 .largeheader
 {
 	font-size:400%;
 	cursor:pointer;
-	line-height:100px;
+	line-height:60px;
 	white-space: nowrap;
 }
 .thumbnail_largeheader
@@ -306,10 +306,11 @@ h3, h4
 #editorBox
 {
 		/*font-family: 'Inika', serif;*/
-			font-family: 'Armata', sans-serif;
+		font-family: 'Armata', sans-serif;
 		position: absolute;
-		padding: 20px 0px 40px 0px;
-		text-align: center;
+		padding: 5px 0px 5px 0px;
+		text-align: left;
+		line-height:60px;
 }
 .largeeditor
 {
