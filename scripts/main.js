@@ -44,6 +44,7 @@ var editedobjecty = "";
 var isBold = false;
 //Italic toggle
 var isItalic = false;
+var isUnderline = false;
 //Counter to assign the id for a new slide. Increments.
 var slidecounter = 1;
 //Whether color pickler menu is open
@@ -989,7 +990,7 @@ function toastEditor(event)
 		$("#editorBox").css("width", $(editedobject).width() + 20);
 		$("#editorBox").css("font-family", $(editedobject).css("font-family"));
 		$("#editorBox").css("font-size", $(editedobject).css("font-size"));
-		$("#editorBox").css("height", h);
+		$("#editorBox").css("height", h*2);
 		$("#editorBox").focus();
 		
 	}

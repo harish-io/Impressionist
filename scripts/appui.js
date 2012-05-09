@@ -256,6 +256,20 @@ function toggleItalic()
 		$(editedobject).css("font-style", "normal")
 	}
 }
+function toggleUnderline()
+{
+	isUnderline = !isUnderline;
+	if(isUnderline)
+	{
+		$("#italicsButton").addClass("menuButtonSelected");
+		$(editedobject).css("text-decoration", "underline")
+	}
+	else
+	{
+		$("#italicsButton").removeClass("menuButtonSelected");
+		$(editedobject).css("text-decoration", "none")
+	}
+}
 function deleteObject()
 {
 	if(editedobject!="")
@@ -630,4 +644,16 @@ function toggleDisplayView()
 		$("#rightBtn").text("Presentation View")
 		display = 1;
 	}
+}
+function doLeftAlign()
+{
+	$(editedobject).css("text-align", "left");
+}
+function doCenterAlign()
+{
+	$(editedobject).css("text-align", "center");
+}
+function doRightAlign()
+{
+	$(editedobject).css("text-align", "right");
 }
