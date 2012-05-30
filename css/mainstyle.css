@@ -832,6 +832,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', end
 	padding-top:3px;
 	font-family: 'Armata', sans-serif;
 }
+#shaperesize
+{
+	outline:1px solid #0ca4eb;
+	outline-offset: 5px; 
+	position: absolute;
+	left:0px
+	top:0px;
+	width:50px;
+	height:50px;
+}
 ::-webkit-scrollbar {
     width: 7px;
 }

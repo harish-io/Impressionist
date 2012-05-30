@@ -12,7 +12,7 @@
 var templatearray =
 					[
 
-						 "<html><head><meta charset='utf-8' /><title>Impressionist previewer - (by @hsivaram)</title>",
+						 "<html><head><title>Impressionist previewer - (by @hsivaram)</title>",
 						 "<link href='http://fonts.googleapis.com/css?family=Inika:400,700' rel='stylesheet' type='text/css'>",
 						 "<link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'><link href='css/style.css' rel='stylesheet' />",
 						 "<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel=',stylesheet' type='text/css'>",
@@ -35,11 +35,11 @@ var templatearray =
 						 "</body>",
 						 "</html>"
 					];
-//var largetext= "<div contenteditable='true'>Hello</div>";
-var largetext = "<div class='!OBJECT_SIZE! slideobject' id='!ID!' data-font-size='largeheader' data-font-face='Inika' data-selected-color='#000000' contenteditable='true'>This is sample text</div>";
+
+var largetext = "<h3 class='!OBJECT_SIZE! slideobject' id='!ID!' data-font-size='largeheader' data-font-face='Inika' data-selected-color='#000000'>This is sample text</h3>";
 var orchtemplate = "<div class='orchestrationthumbnail' id='!SLIDE_ID!'><div id='!THUMBCONTID!'></div><span id='!XP!'class='label label-info xspan'></span><span id='!YP!' class='label label-info vspan'></span><p id='!SLIDENUMBER!' class='slidethumbnailnumberorch'>!COUNT!</p><div class='subbottombar'><a class='blackp' id='!OROT!'>!ROTTEXT!<sup>o</sup></a></div><div class='bottombar'><a class='whitep' id='!ZP!'>!DEPTH!</a><br/><a class='whitep' ></a></div></div>";
-var slidethumbtemplate = "<div class='slidethumbnail' id='!SLIDE_ID!' style='overflow:hidden'><p class='slidethumbnailnumber' id='!THUMBDISPLAYNUMBER!'>!COUNT!</p><p id='!THUMBDELETE!' class='thumbdeleteicon deletehide' onclick='deleteSlide()'>x</p></div>";
-var slidetemplate="<div class='mainslide step' id='!SLIDE_ID!' contenteditable='false'></div>";
+var slidethumbtemplate = "<div class='slidethumbnail' id='!SLIDE_ID!'><p class='slidethumbnailnumber' id='!THUMBDISPLAYNUMBER!'>!COUNT!</p><p id='!THUMBDELETE!' class='thumbdeleteicon deletehide' onclick='deleteSlide()'>x</p></div>";
+var slidetemplate="<div class='mainslide step' id='!SLIDE_ID!'></div>";
 var pictemplate = "<img class='slideimage' id='!IMG_ID!' src='!IMG_SRC!'></img>";
 var presotemplate = "<li class='presolistitem' id='!PRESOID!'>!PRESOTITLE!</li>";
 var paginationtemplate = "<li><a href='#' class='whiteanchor' id='!PAGINATIONID!'>!PAGECOUNT!</a></li>"
@@ -48,5 +48,4 @@ var paginationtemplate = "<li><a href='#' class='whiteanchor' id='!PAGINATIONID!
 var fontStyle = "largeheader";
 var bevantext = "'Bevan', serif;";
 var inikatext = "'Inika', serif;";
-
 

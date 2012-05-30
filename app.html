@@ -36,6 +36,8 @@
   <script src="scripts/main.js"></script>
   <script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
   <script src="scripts/matrices.js"></script>
+  <script src="scripts/raphael.js"></script>
+  <script src="scripts/freetransform.js"></script>
 
   <script type="text/javascript" src="scripts/jqueryui.js"></script>
   <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-button.js"></script>
@@ -127,6 +129,7 @@
                     <div class="btn-group" id="typeRadio">
                     <a id="textBtn"  class="btn btn-info btn-inverse" href="#" onclick="setObjectType('text')"><i class="icon-white icon-text-width" ></i>&nbsp;</a>
                     <a id="picBtn"   class="btn btn-info btn-inverse" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-white icon-picture" ></i> &nbsp;</a>    
+                    <a id="picBtn"   class="btn btn-info btn-inverse" href="#" data-toggle="modal" onclick="setObjectType('shape')"><i class="icon-white icon-star" ></i> &nbsp;</a>  
                    </div>
             </li>
             <li>&nbsp</li>
@@ -367,7 +370,7 @@
     
     
      
-          <span id="play">
+        <span id="play">
             <span class="rotate label label-info" id="spanrotate">rotate</span>
             <!--<span class="scale">scale</span>-->
             <span class="skewx label label-info" id="spanskewx">skewx</span>

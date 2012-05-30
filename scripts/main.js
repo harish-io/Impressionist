@@ -764,7 +764,7 @@ function triggerObjectAdd(event)
 				$(editedobject).css("font-family", selectedFont);
 				console.log("Update previe call");
 				isMoving = false;
-				updateSlidePreview();
+				//updateSlidePreview();
 				//$(editedobject).css("-webkit-transform","matrix(1,0,0,1,0,0)");
 			objectcounter++;
 			}
