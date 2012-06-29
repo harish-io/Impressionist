@@ -405,9 +405,10 @@ h3, h4
 .orchestration
 {
 	width:93%;
-	height:85%;
+	height:82%;
 	position: absolute;
 	left:-10000px;
+	z-index:200;
 	top:82px;
 	background-color: #FFF;
 	overflow:scroll;
@@ -602,7 +603,7 @@ h3, h4
 #outputconsole
 {
 	position: absolute;
-	left:-200000;
+	/*left:-200000;*/
 	width:1px;
 	height:1px;
 }

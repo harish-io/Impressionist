@@ -214,6 +214,10 @@ function setFontStyle(value)
 	}
 	$("#fontstyledropdown").html(dropdownlabel+'<b class="caret">');
 }
+function addUnorderedList()
+{
+	console.log("adding ul : "+editor.getValue())
+}
 function setFont(font)
 {
 	selectedFont = font;
@@ -371,7 +375,7 @@ function hidePresentationView()
 	isOrchestration = true;
 
 	$("#orchestrationarea").css("left", 40);
-	$("#drawingboard").css("left", -20000)
+	$("#drawingboard").css("visibility", "hidden")
 	$("#leftarrow").css("visibility", "visible");
 	$("#rightarrow").css("visibility", "visible");
 	$("#slidethumbnailholder").css("visibility", "hidden")
@@ -386,7 +390,7 @@ function showPresentationView()
 {
 	isOrchestration = false;
 	togglePaginator(false);
-	$("#drawingboard").css("left", 150)
+	$("#drawingboard").css("visibility", "visible")
 	$("#slidethumbnailholder").css("visibility", "visible")
 	$("#leftarrow").css("visibility", "hidden");
 	$("#rightarrow").css("visibility", "hidden");
@@ -419,6 +423,10 @@ function showOpenDialog()
 {
 	$("#openModal").modal();
 	showSavedPresentations();
+}
+function showEditorDialog()
+{
+	$("#editorModal").modal();
 }
 function setObjectType(type)
 {
@@ -606,7 +614,7 @@ function cloneElement()
 	objectcounter++;
 	removePrevSelection();
 	isMoving = false;
-	updateSlidePreview();
+	//updateSlidePreview();
 
 }
 function addOrchestrationThumbnailsFromStore(arr)

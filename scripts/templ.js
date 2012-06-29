@@ -43,6 +43,7 @@ var slidetemplate="<div class='mainslide step' id='!SLIDE_ID!'></div>";
 var pictemplate = "<img class='slideimage' id='!IMG_ID!' src='!IMG_SRC!'></img>";
 var presotemplate = "<li class='presolistitem' id='!PRESOID!'>!PRESOTITLE!</li>";
 var paginationtemplate = "<li><a href='#' class='whiteanchor' id='!PAGINATIONID!'>!PAGECOUNT!</a></li>"
+var ultemplate = "<ul id='!ULID!'><li></li></ul>";
 
 
 var fontStyle = "largeheader";

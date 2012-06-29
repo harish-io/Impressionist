@@ -249,7 +249,7 @@ function getOrchestrationData()
 }
 function createNewPresentation()
 {
-	$("#drawingboard").html('<a href="#" id="deleteBtn" class="deleteicon" style="z-index:0; left:-20000px" onclick="deleteObject()">x</a>');
+	//$("#drawingboard").html('<a href="#" id="deleteBtn" class="deleteicon" style="z-index:0; left:-20000px" onclick="deleteObject()">x</a>');
 	$("#slidethumbnailholder").html("");
 	slidecounter =1;
 	objectcounter= 0;
@@ -577,6 +577,7 @@ function onSlideMouseUp(event)
 		ismarkedforcut = false;
 	}
 	addObjectFlag = false;
+	console.log("Ammeda kindi: " +editor.getValue());
 }
 function calculateTextWidth()
 {
@@ -848,7 +849,7 @@ function onObjectDrag(event)
 		item.css("top", 20)
 	}
 	isMoving = true;
-	updateSlidePreview();
+	//updateSlidePreview();
 	$("#contextbar").css("visibility", "hidden");
 	$("#play").css("visibility", "hidden");
 
@@ -982,9 +983,8 @@ function toastEditor(event)
 
 		//$("#"+event.target.id).css("opacity", 0);
 		var keyed = $(editedobject).html().split("<br>").join("\n");
-		console.log("Kyeded "+keyed);
-		$("#editorBox").val(keyed)
-		//$("#editorBox").attr("class", "largeeditor largeheader");
+		$("#editorBox").css("visibility","visible");
+		$("#editorBox").attr("class", "largeeditor largeheader");
 		$("#editorBox").css("left", modifiedx);
 		$("#editorBox").css("top", modifiedy);
 		$("#editorBox").css("width", $(editedobject).width() + 20);
@@ -992,6 +992,8 @@ function toastEditor(event)
 		$("#editorBox").css("font-size", $(editedobject).css("font-size"));
 		$("#editorBox").css("height", h*2);
 		$("#editorBox").focus();
+
+		
 		
 	}
 	
@@ -1420,13 +1422,20 @@ function replaceElementIDValues(input)
 	str = str.split("____slide").join("____slide____")
 	str = str.split("____object").join("____object____");
 	$("#outputconsole").html(str);
+	createRevealJSMarkup();
+}
+function createRevealJSMarkup()
+{
+	var s = $("#outputconsole").html();
+	var news = s.split("div").join("section");
+	console.log("+++++++++++++++++++++++++++++++++++++++++");
+	console.log(news)
 }
 function reAdjustChildCoords()
 {
 	for(var i=0; i<objectmap.length; i++)
 	{
 		
-
 			if(objectmap[i].index != "" || !isNaN(objectmap[i].index))
 			{
 				var stubobject = $("#____object____"+objectmap[i].index);
@@ -1440,7 +1449,7 @@ function reAdjustChildCoords()
 
 				l = l- (screen.width/2)
 				t = t - (screen.height/2) + 100
-				console.log("l "+l+ "  "+screen.width/2)
+				//console.log("l "+l+ "  "+screen.width/2)
 				if(fontsize == "mediumheader")
 				{
 					t += (stubobject).height() 
@@ -1470,8 +1479,6 @@ function reAdjustChildCoords()
 				stubobject.css("left", l)
 				stubobject.css("top", t)
 			}
-			
-		
 	}
 	for(var k =1; k<slidecounter; k++)
 	{

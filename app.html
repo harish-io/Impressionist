@@ -45,8 +45,12 @@
   <script type="text/javascript" src=" scripts/bootstrap/js/bootstrap-button.js"></script>
   <script type="text/javascript" src="scripts/bootstrap/js/bootstrap-modal.js"></script>
   <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+
+  <script src="scripts/parser_rules/advanced.js"></script>
+<script src="scripts/dist/wysihtml5-0.3.0.js"></script>
   
     <script>
+    var editor;
     $(document).ready(function(e)
     {
       $("#mybody").css("visibility", "hidden");
@@ -60,7 +64,16 @@
       {
         document.location.href = "index.html";
       }
+      initializeEditor();
     });
+    function initializeEditor()
+    {
+      editor = new wysihtml5.Editor("adveditorBox", {
+         parserRules:  wysihtml5ParserRules
+     });
+      editor.setValue(ultemplate);
+      console.log(editor.getValue())
+    }
     </script>
     <script type="text/javascript">
 
@@ -129,7 +142,7 @@
                     <div class="btn-group" id="typeRadio">
                     <a id="textBtn"  class="btn btn-info btn-inverse" href="#" onclick="setObjectType('text')"><i class="icon-white icon-text-width" ></i>&nbsp;</a>
                     <a id="picBtn"   class="btn btn-info btn-inverse" href="#" data-toggle="modal" onclick="setObjectType('pic')"><i class="icon-white icon-picture" ></i> &nbsp;</a>    
-                    <a id="picBtn"   class="btn btn-info btn-inverse" href="#" data-toggle="modal" onclick="setObjectType('shape')"><i class="icon-white icon-star" ></i> &nbsp;</a>  
+                    <a id="listBtn"   class="btn btn-info btn-inverse" href="#" data-toggle="modal" onclick="showEditorDialog()"><i class="icon-white icon-list" ></i> &nbsp;</a>  
                    </div>
             </li>
             <li>&nbsp</li>
@@ -278,10 +291,13 @@
    </div>
    <div class="presentationarea" id="drawingboard">
    
-      <a href="#" id="deleteBtn" class="deleteicon" style="z-index:40; left:-20000px" onclick="deleteObject()">x</a>
+      <a href="#" id="deleteBtn" class="deleteicon" style="z-index:40;" onclick="deleteObject()">x</a>
 
    </div>
-  <textarea id="editorBox" style="z-index:3000; left:-20000px"></textarea>
+         <textarea id="editorBox" style="z-index:3000; visibility:hidden"></textarea>
+        <!--<textarea id="adveditorBox" style="z-index:3000;"></textarea>-->
+
+
    <div class="orchestration" id="orchestrationarea">
     <div class="vp1">
     </div>
@@ -343,6 +359,41 @@
             </div>
             <div class="modal-footer">
               <a href="#" class="btn btn-info" data-dismiss="modal" onclick="setSaveName()">Save</a>
+              <a href="#" class="btn" data-dismiss="modal" >Cancel</a>
+            </div>
+          </div>
+          <div id="openModal" class="modal hide fade" style:"z-index:350000">
+            <div class="modal-footer">
+              <a class="close" data-dismiss="modal" >&times;</a>
+              <h3>Open Presentation</h3>
+            </div>
+            <div class="modal-body">
+              <h4>Saved Presentations... (double click to open)</h4>
+              <br/>
+              <div id="existingpresentations">
+                  <ul class="nostyle" id="savedpresolist">
+
+                  </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-info" data-dismiss="modal"onclick="createOrOpen()">OK</a>
+              <a href="#" class="btn" data-dismiss="modal" >Cancel</a>
+            </div>
+          </div>
+
+            <div id="editorModal" class="modal hide fade" style:"z-index:350000">
+            <div class="modal-footer">
+              <a class="close" data-dismiss="modal" >&times;</a>
+              <h3 id="savepresoheader">Advanced Editor</h3>
+            </div>
+            <div class="modal-body">
+              <h4></h4>
+              <br/>
+              <textarea class="input-medium" id="adveditorBox" style="width:100%; height:300px"></textarea>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-info" data-dismiss="modal" onclick="addUnorderedList()">Add</a>
               <a href="#" class="btn" data-dismiss="modal" >Cancel</a>
             </div>
           </div>

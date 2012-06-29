@@ -1,0 +1,143 @@
+
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>reveal.js</title>
+
+		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	
+	</head>
+	
+	<body>
+		
+		<div id="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="mainslide step" id="____slide____1" data-x="-6750" data-y="NaN" data-rotate="0" data-z="0" data-scale="1" style="">
+					<h3 class="ui-draggable slideobject largeheader" id="____object____18439" data-font-size="largeheader" data-font-face="Inika" data-selected-color="#000000" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 0); font-weight: bold; opacity: 1; font-style: italic; z-index: 20; font-family: Inika; position: absolute; left: 100px; top: 100px; ">This is sample text and beautiful text
+
+					</h3>
+			</section>
+			<section class="mainslide step" id="____slide____2" data-x="-5550" data-y="NaN" data-rotate="0" data-z="0" data-scale="1" style="">
+				<h3 class="ui-draggable slideobject itemselected largeheader" id="____object____32854" data-font-size="largeheader" data-font-face="Inika" data-selected-color="#000000" style="-webkit-transform: matrix(1, 0, 0, 1, 0, 0); z-index: 20; font-family: Inika; opacity: 1; position: absolute; left: 200px; top: 210px; ">second slide
+
+				</h3>
+			</section>
+			</div>	
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+		
+		<script src="reveal.js"></script>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires when a slide with data-state=customevent is activated
+			Reveal.addEventListener( 'customevent', function() {
+				alert( '"customevent" has fired' );
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.indexh & event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			//hljs.initHighlightingOnLoad();
+		</script>
+
+		<!-- Everything below this point is unrelated to the slideshow -->
+		
+		<div style="position: absolute; bottom: 10px; left: 50%; margin-left: -160px">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-text="reveal.js - a 3D slideshow tool from @hakimel." data-url="http://lab.hakim.se/reveal-js" data-count="small" data-related="hakimel"></a>
+			
+			<iframe id="facebook-button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fapp.hakim.se%2Freveal-js%2F&layout=button_count&show_faces=false&width=93&action=like&font=arial&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:24px; position: relative; top: 4px;" allowTransparency="true"></iframe> 
+			<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+			<script type="text/javascript">
+			/* <![CDATA[ */
+			    (function() {
+			        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+			        s.type = 'text/javascript';
+			        s.async = true;
+			        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+			        t.parentNode.insertBefore(s, t);
+			    })();
+			/* ]]> */
+			</script>
+
+			<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://lab.hakim.se/reveal-js"></a>
+			<noscript><a href="http://flattr.com/thing/447435/Reveal-js" target="_blank">
+			<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+		</div>
+
+		<a href="https://github.com/hakimel/reveal.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+		
+		<script>
+		var _gaq = [['_setAccount', 'UA-15240703-1'], ['_trackPageview']];
+		(function(d, t) {
+		var g = d.createElement(t),
+		    s = d.getElementsByTagName(t)[0];
+		g.async = true;
+		g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g, s);
+		})(document, 'script');
+		</script>
+
+	</body>
+</html>
