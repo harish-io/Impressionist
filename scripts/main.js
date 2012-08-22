@@ -983,6 +983,7 @@ function toastEditor(event)
 
 		//$("#"+event.target.id).css("opacity", 0);
 		var keyed = $(editedobject).html().split("<br>").join("\n");
+		console.log("dabaaaa "+keyed);
 		$("#editorBox").css("visibility","visible");
 		$("#editorBox").attr("class", "largeeditor largeheader");
 		$("#editorBox").css("left", modifiedx);
@@ -991,6 +992,7 @@ function toastEditor(event)
 		$("#editorBox").css("font-family", $(editedobject).css("font-family"));
 		$("#editorBox").css("font-size", $(editedobject).css("font-size"));
 		$("#editorBox").css("height", h*2);
+		$("#editorBox").val(keyed)
 		$("#editorBox").focus();
 
 		
