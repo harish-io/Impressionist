@@ -5,7 +5,7 @@ Impressionist is a visual tool that enables you to create impress.js presentatio
 
 Impressionist is conceptualized and developed by Harish Sivaramakrishnan (@hsivaram) and is under open development on github. Please feel free to watch / fork / log issues.
 
-DEVELOPMENT NOTES 
+###Development notes 
 
 The current version is alpha 3
 
@@ -26,7 +26,7 @@ Features
 
 The preview is hosted at http://www.hsivaram.com/impressionist/alpha3. This is currently webkit only. Please use Chrome or Safari. This has not been tested to a great deal on windows (blame it on me having only a mac) and I expect to find more issues on win than on mac. Please submit issues / feature requests.
 
-CREDITS
+###Credits
 
 Impressionist leverages the following libraries:
 
