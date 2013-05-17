@@ -38,3 +38,6 @@ Impressionist leverages the following libraries:
 * eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
 * Peter Nederlof's Playing with matrices (http://peterned.home.xs4all.nl/matrices/#1,0,0,1,0,0) [Adaptation] 
 * Thomas Fuchs's Keymaster.js (https://github.com/madrobby/keymaster)
+
+###License
+MIT licensed.
