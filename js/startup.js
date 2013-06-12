@@ -3,12 +3,13 @@
     {
         
         // checkLogin();
-        setTimeout(redirectApp, 10000)
+        /** uncomment for fb login stuff **/
+        //setTimeout(redirectApp, 10000)
         $("#loginbtn").on("click", function( e )
         {
            FB.login();
         })
-        //impressionist();
+        impressionist();
 
     });
     var loggedinstate;
