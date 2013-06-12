@@ -6,9 +6,9 @@ Impressionist is a visual tool to create impress.js presentations
 Impressionist is licensed under a Creative Commons Attribution 3.0 Unported (CC BY 3.0)  (http://creativecommons.org/licenses/by/3.0/) and MIT License - http://opensource.org/licenses/mit-license.html. 
 
 
-## Links:
+## Links
 
-+ [Hosted version](http://harish.io/impressionist/landing.html)
++ Demo - (http://harish.io/impressionist/landing.html)
 
 
 ## Changelog
@@ -28,8 +28,8 @@ Impressionist is licensed under a Creative Commons Attribution 3.0 Unported (CC 
 
 ## Credits
 
-+ Impressionist name courtesy - Anirudh Sasikumar (http://twitter.com/anirudhs)
-+ impress.js by Bartek Szopka (@bartaz)
++ Project name courtesy - Anirudh Sasikumar (http://twitter.com/anirudhs)
++ impress.js by Bartek Szopka (@http://bartaz.github.io/impress.js/)
 + Flat-UI by designmondo (http://designmodo.github.io/Flat-UI/)
 + Anthony Terrien's jQuery Knob (https://github.com/aterrien/jQuery-Knob)
 + eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
