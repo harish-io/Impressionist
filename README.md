@@ -1,38 +1,38 @@
-Impressionist is a visual tool that enables you to create impress.js presentations in a visual, easy to use way. The drag and drop orchestrator will help define slide transitions visually.
+Impressionist
+=======
 
-Impressionist is conceptualized and developed by Harish Sivaramakrishnan (@hsivaram) and is under open development on github. Please feel free to watch / fork / log issues.
+Impressionist is a visual tool to create impress.js presentations
 
-DEVELOPMENT NOTES 
-
-The current version is alpha 3
-
-Features
-
-* WSWIYG slide authoring
-* Google web fonts support for typography
-* Text and Image support
-* Copy + Paste support (CTRL + C & V) for object duplication
-* Transform controls for slide elements
-* Delete objects, Delete slides
-* WSIWYG orchestration view
-* 3D orchestration using controls
-* Preview presentation
-* Export presentation as ZIP
-* Save presentation (source) to resume work.
+Impressionist is licensed under a Creative Commons Attribution 3.0 Unported (CC BY 3.0)  (http://creativecommons.org/licenses/by/3.0/) and MIT License - http://opensource.org/licenses/mit-license.html. 
 
 
-The  preview is hosted at http://www.hsivaram.com/impressionist/alpha3. This is currently webkit only. Please use google chrome or safari to run the app. This has not been tested to a great deal on windows (blame it on me having only a mac) and I expect to find more issues on win than on mac. Please do log issues / feature requests in the issues section
+## Links:
 
-CREDITS
++ [Hosted version](http://harish.io/impressionist/landing.html)
 
-Impressionist leverages the following libraries:
 
-* Name for the project courtesy Anirudh Sasikumar (@anirudhs)
-* Bartek Szopka's Impress.js (https://github.com/bartaz/impress.js/)
-* Twitter's Bootstrap (http://twitter.github.com/bootstrap/)
-* jQuery & jQuery UI (http://jquery.com)
-* Anthony Terrien's jQuery Knob (https://github.com/aterrien/jQuery-Knob)
-* eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
-* Peter Nederlof's Playing with matrices (http://peterned.home.xs4all.nl/matrices/#1,0,0,1,0,0) [Adaptation] 
-* Thomas Fuchs's Keymaster.js (https://github.com/madrobby/keymaster)
+## Changelog
+
++ Complete re-write from the alpha 3 version released last year
++ Brand new UI, based on flat-ui be designmondo.
++ Drag to reorder slides.
++ New, improved orchestration view.
++ Stable, several bugs fixed.
+
+## Author
+
+**Harish Sivaramakrishnan**
+
++ [http://harish.io](http://harish.io)
++ [http://twitter.com/harish_io](http://twitter.com/harish_io)
+
+## Credits
+
++ Impressionist name courtesy - Anirudh Sasikumar (@anirudhs)
++ impress.js by Bartek Szopka (@bartaz)
++ http://designmodo.github.io/Flat-UI/ Flat-UI by designmondo
++ Anthony Terrien's jQuery Knob (https://github.com/aterrien/jQuery-Knob)
++ eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
++ Peter Nederlof's Playing with matrices (http://peterned.home.xs4all.nl/matrices/#1,0,0,1,0,0) [Adaptation]
++ Thomas Fuchs's Keymaster.js (https://github.com/madrobby/keymaster)
 

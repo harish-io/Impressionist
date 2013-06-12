@@ -1,0 +1,50 @@
+.ft-container {
+	position: absolute;
+}
+
+.ft-controls {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.ft-scaler {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.ft-scaler-top {
+    top: 0%;
+}
+
+.ft-scaler-mid {
+    top: 50%;
+}
+
+.ft-scaler-bottom {
+    top: 100%;
+}
+
+.ft-scaler-left {
+    left: 0%;
+}
+
+.ft-scaler-center {
+    left: 50%;
+}
+
+.ft-scaler-right {
+    left: 100%;
+}
+
+.ft-rotator{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url('./rotate_ccw.png');
+}

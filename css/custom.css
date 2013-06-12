@@ -1,0 +1,701 @@
+@font-face 
+{
+  font-family: "entypo";
+  src: url("../fonts/entypo.eot");
+  src: url("../fonts/entypo?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#entypo") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+.quicksand
+{
+	font-family: 'Quicksand', sans-serif !important;
+	text-transform: uppercase;
+}
+.montserrat
+{
+	font-family: 'Montserrat', sans-serif !important;
+}
+.miltonian
+{
+	font-family: 'Miltonian', cursive !important;
+}
+.sketch
+{
+	font-family: 'Cabin Sketch', cursive !important;
+}
+a, a:hover{
+	text-decoration: none;
+	color: white;
+	cursor:pointer;
+}
+h3
+{
+	display:  inline !important;
+	cursor:pointer;
+}
+body
+{
+	text-transform: none !important;
+	display: inline-block;
+}
+.versiontext
+{
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 3px;
+	color: #000;
+}
+.logoholder
+{
+	border-bottom: 3px solid #000;
+}
+.logoimg
+{
+	position: absolute;
+	left: 5px;
+	top: -6px;
+}
+.logotext
+{
+	margin-left: 50px !important;
+	text-transform: none;
+	font-size: 20px;
+	color: white;
+}
+.mainviewport
+{
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top:0px;
+	bottom: 0px;
+	background-color: #FFF;
+	min-width: 750px;
+
+}
+.maskedcontainer
+{
+	position: absolute;
+	left: 0px;
+	right : 0px;
+	top:0px;
+	bottom: 0px;
+	background-color: #FFF;
+	overflow: hidden;
+
+}
+.sidebar
+{
+	position: fixed;
+	width : 230px;
+	left :0px;
+	top: 0px;
+	bottom : 0px;
+	text-transform: none !important;
+	padding :0 !important;
+	z-index: 200;
+}
+.sidebarmenuitem
+{
+	text-transform: none !important;
+	opacity: 1;
+	border-bottom: 1px solid #34495E;
+	
+	
+
+}
+.sidebarmenuitem:hover
+{
+	text-transform: none !important;
+	opacity : 0.6;
+	-webkit-transition: opacity 0.5s ease;
+	border-bottom: 1px solid #34495E;	
+}
+.menuheader
+{
+	margin-left: 20px;
+	padding-top: 15px;
+}
+.menuicon
+{
+	position: absolute;
+	right : 10px;
+	top : 20px;
+}
+.sidebarfooter
+{
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	width: 229px;
+	height: 100px;
+	background-color: #2C3E50;
+	
+}
+.mainfooter
+{
+	position: fixed;
+	width : 180px;
+	left :230px;
+	top: 0px;
+	bottom : 0px;
+	text-transform: none !important;
+	padding :0 !important;
+	z-index: 10;
+}
+.previewbtn
+{
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 30px;
+}
+.maingreyarea
+{
+	position: absolute;
+	left: 405px;
+	top:0px;
+	bottom: 0px;
+	right:0px;
+	overflow: hidden;
+}
+.orchgreyarea
+{
+	position: absolute;
+	left: 410px;
+	top:0px;
+	bottom: 0px;
+	right:0px;
+	overflow: hidden;
+}
+.slideviewportcontainer
+{
+	position: relative;
+	z-index: 1;
+}
+.slideviewport
+{
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	width: 930px;
+	height : 530px;
+	background-color: #FFF;
+	border : 1px dashed #ECF0F1;
+	text-transform: none;
+	/*-webkit-user-select: none;*/
+}
+.impress-slide-container
+{
+	position: relative;
+	width: 100%;
+	height: 100%
+	
+}
+.impress-slide
+{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	bottom: 0px;
+	right: 0px;
+
+
+}
+.mainheaderbar
+{
+	width:100%;
+	height: 40px;
+	margin-left: 230px;
+
+}
+.settingsbox
+{
+	position: absolute;
+	left : -400px;
+	top:0px;
+	bottom:0px;
+	width:500px;
+	border-right : 1px solid #2980B9;
+	text-transform: none !important;
+	background: rgba(74,89,108,1);
+	border-left: 1px solid #2980B9;
+	z-index: 10;
+
+}
+.settingsboxheader
+{
+	color: white;
+	text-transform: none !important;
+}
+#newpreso
+{
+	margin-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+}
+#presotitledescription
+{
+	width: 400px;
+	height : 200px;
+}
+.toolbarblockboth
+{
+	border-right: 1px solid #2980B9;
+	border-left: 1px solid #2980B9;
+}
+.toolbarblockleft
+{
+	border-left: 1px solid #2980B9;
+}
+.dockedtoolbar
+{
+	display: inline-block;
+	z-index : 201;
+	margin-top: -5px;
+}
+.slidethumbholdercontainer
+{
+	position: relative;
+	width: 100%;
+	height:100%;
+	z-index: 9;
+}
+.slidethumbholder
+{
+	position: absolute;
+	left: 0px;
+	top:60px;
+	bottom: 0px;
+	right:0px;
+	overflow: scroll;
+}
+.slidedisplay
+{
+	font-size: 14px;
+	margin-top: 30px;
+	margin-left: 40px;
+	color:#666;
+}
+#addslidebtn
+{
+	position: fixed;
+	left: 240px;
+	top:5px;
+}
+.viewtogglebtn
+{
+	/*display: inline-block;
+	margin-left: 10px;
+	margin-top: 5px;
+	text-transform: none;*/
+}
+.slidethumb
+{
+	display: block;
+	width: 160px;
+	height : 110px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background-color: #ECF0F1;
+	position: relative;
+
+}
+.orchthumb
+{
+	display: block;
+	width: 160px;
+	height : 110px;
+	border : 1px solid #BDC3C7 ;
+	margin-top: 10px;
+	margin-left: 10px;
+	background-color: #ECF0F1;
+	position: absolute;
+	text-transform: none;
+
+}
+.showthumb
+{
+	-webkit-transition: opacity 0.5s ease;
+	opacity : 1;
+}
+.slidethumb .deletebtn
+{
+	display: block;
+	-webkit-transition: opacity 0.5s ease;
+	opacity : 0;
+}
+.slidethumb:hover .deletebtn
+{
+	display: block;
+	-webkit-transition: opacity 0.5s ease;
+	opacity: 1;
+}
+.slidelement
+{
+	white-space: nowrap;
+	height: 100px;
+}
+.slidelementh1
+{
+	font-size: 400%;
+	color: black;
+}
+.slidelementh2
+{
+	font-size: 320%;
+}
+.slidelementh3
+{
+	font-size: 250%;
+}
+.movecursor
+{
+	cursor: move;
+}
+.selectioncursor
+{
+	cursor : text;
+}
+.deletebtn
+{
+	position: absolute;
+	bottom: 48px;
+	right : 60px;
+	display: none;
+}
+.elementhover
+{
+	color : #999;
+}
+.elementselected
+{
+	color : #999;
+	/*border: 1px solid #ccc;*/
+}
+.transformdiv
+{
+	position: absolute;
+	display: none;
+	width: 250px;
+	height : 200px;
+}
+.thumbnailholder
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+}
+.knob
+{
+	display: inline-block;
+}
+.knobholder
+{
+	position: absolute;
+	left:490px;
+	height : 50px;
+	top: 20px;
+	color:black;
+	background-color: #3498DB;
+	border-radius: 5px;
+}
+.transformlabel
+{
+	display:inline-block;
+	font-size:150%;
+	color : #999;
+	padding-right: 10px;
+	padding-left: 10px;
+	
+}
+.transformcontrolsholder
+{
+	position: absolute;
+	left: 10px;
+	top: 0px;
+	width : 800px;
+	height : 50px;
+	background-color: #ECF0F1;
+	z-index: 20;
+	padding-left: 20px;
+	text-transform: none;
+}
+#skewxlabel
+{
+	left:0px;
+	top: 10px;
+	width : 200px;
+	font-weight: bold;
+	text-transform: none;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+}
+#skewylabel
+{
+	left:140px;
+	top: 10px;
+	width : 200px;
+	font-weight: bold;
+	text-transform: none;
+	color: white;
+	font-size: 16px;
+	position: absolute;
+}
+.dropdownlist
+{
+	width: 100px !important;
+	text-transform: none;
+}
+.dropdownpopup
+{
+	width : 100px;
+}
+.dk_toggle_custom
+{
+	border-radius: 0px;
+	padding: 11px 5px 7px 13px !important;
+	background-color: #3498DB !important;
+}
+.dk_container_custom
+{
+	vertical-align: top !important;
+}
+.select-icon-custom
+{
+	visibility: hidden;
+}
+.pulldownmenu
+{
+	text-transform: none;
+}
+.orchestrationviewport
+{
+	background-color: #FFF;
+	width : 930px;
+	height: 570px;
+	border : 1px dashed #CCC;
+	margin-top: 40px;
+	overflow: scroll;
+	position: relative;
+}
+.image-input
+{
+	width : 400px;
+}
+.thumelement
+{
+	position: absolute !important;
+}
+.ranges
+{
+    vertical-align: top;
+    margin-top: 14px;
+    width : 100px;
+}
+.currentselection
+{
+	border-bottom: 4px solid #1ABC9C;
+}
+.stylebg
+{
+	background-color: #FFCC00 !important;
+}
+.fblogin
+{
+	position: absolute;
+	right : 200px;
+	top: 20px;
+}
+.descriptioninput
+{
+	width: 400px;
+	height : 250px;
+}
+.modalwindow
+{
+	text-transform: none;
+}
+.savedpresos
+{
+	width: 100%;
+	height : 110px;
+	border-bottom:  1px dotted #DDD;
+}
+.presothumb
+{
+	width: 200px;
+	height : 100px;
+	font-family: "entypo";
+	display: inline-block;
+	/*border : 1px solid #CCC;*/
+	vertical-align: top;
+	position: relative;
+}
+.presothumbcontent
+{
+	display: inline-block;
+	width: 60%;
+	height : 100px;
+	background-color: #FFF;
+	vertical-align: top;
+	padding-left: 10px;
+}
+.placeholder
+{
+	display : none;
+}
+.presentationmeta
+{
+	width : 932px;
+	height: 30px;
+	margin-left : 5px;
+	margin-bottom: -10px;
+	background-color: #BDC3C7;
+	position: relative;
+}
+.idle
+{
+	display: none;
+}
+.active
+{
+	display: inline-block;
+}
+.impressionistviewport
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.preloaderviewport
+{
+	position: absolute;
+	left:0px;
+	top: 0px;
+	bottom: 0px;
+	right:0px;
+	background-color: #3498DB;
+	z-index : 4000;
+}
+#loadprogressmeter
+{
+	margin-left: -20px;
+	margin-top: -4px;
+}
+.preloadmessage
+{
+	margin-top: 20%;
+	margin-left: 40%;
+	width: 390px;
+	position:relative;
+}
+.loadingtext
+{
+	color:black;
+	font-size: 80%;
+	font-weight: bold;
+}
+.preloadertext
+{
+	margin-left: 50px !important;
+	margin-top: -50px;
+	text-transform: none;
+	font-size: 20px;
+	color: white;
+}
+.stylethumbnail
+{
+	width: 150px;
+	height : 100px;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	margin-top:10px;
+	background-color: white;
+	border: 1px dotted #CCC;
+	position: relative;
+	display: inline-block;
+}
+.styleh3
+{
+	margin-left: 30px;
+	color: black;
+	cursor: pointer;
+}
+.stylep
+{
+	margin-left: 50px;
+	font-size : 120%;
+	cursor: pointer;
+}
+.styleselection
+{
+	position: absolute;
+	top:-20px;
+	color: #3498DB;
+	width: 97%;
+	left: -1px;
+	padding-left: 5px;
+	background-color: #DDD;
+	border: 1px solid #DDD;
+	cursor:pointer;
+}
+.headingelement
+{
+
+}
+/** Landing page specific styles **/
+.landingcontainer
+{
+	position: absolute;
+	left:0px;
+	right: 0px;
+	top:0px;
+	bottom:0px;
+	background-color: #2980B9;
+}
+.landingcontenttext
+{
+	position: absolute;
+	left: 100px;
+	top:200px;
+	width: 500px;
+	height:200px;
+	color:white;
+	text-transform: none;
+	font-size: 180%
+}
+.landingcontentsubtext
+{
+	position: absolute;
+	left: 100px;
+	top:310px;
+	width: 400px;
+	height:200px;
+	color:white;
+	text-transform: none;
+	font-size: 120%
+}
+.landingsignincontainer
+{
+	position: absolute;
+	left: 640px;
+	top:200px;
+	width: 500px;
+	height:350px;
+	color:white;
+	text-transform: none;
+	font-size: 180%;
+	border-left: 1px dotted #3498DB;
+	padding-left: 20px;
+
+}
+.landingheader
+{
+	width:100%;
+	height:50px;
+	background-color: #3498DB;
+}
