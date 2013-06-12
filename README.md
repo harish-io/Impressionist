@@ -28,9 +28,9 @@ Impressionist is licensed under a Creative Commons Attribution 3.0 Unported (CC 
 
 ## Credits
 
-+ Impressionist name courtesy - Anirudh Sasikumar (@anirudhs)
++ Impressionist name courtesy - Anirudh Sasikumar (http://twitter.com/anirudhs)
 + impress.js by Bartek Szopka (@bartaz)
-+ http://designmodo.github.io/Flat-UI/ Flat-UI by designmondo
++ Flat-UI by designmondo (http://designmodo.github.io/Flat-UI/)
 + Anthony Terrien's jQuery Knob (https://github.com/aterrien/jQuery-Knob)
 + eyecon.ro's colorpicker (http://www.eyecon.ro/colorpicker/)
 + Peter Nederlof's Playing with matrices (http://peterned.home.xs4all.nl/matrices/#1,0,0,1,0,0) [Adaptation]
