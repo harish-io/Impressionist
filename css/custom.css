@@ -269,7 +269,7 @@ body
 	top:60px;
 	bottom: 0px;
 	right:0px;
-	overflow: scroll;
+	overflow-x: hidden;
 }
 .slidedisplay
 {
